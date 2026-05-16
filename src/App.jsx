@@ -3,13 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="text-center text-3xl font-bold text-blue-500">
-      <p>lets start my project</p>
+    <div className="w-full h-screen bg-primary text-secondary flex justify-center items-center ">
+      <Routes>
+          <Route path="/" element={<HomePage />} />
+      </Routes>
     </div>
   )
 }
