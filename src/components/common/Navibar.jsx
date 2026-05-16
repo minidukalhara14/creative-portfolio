@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Navibar() {
     return (
-        <div className="absolute left-[48px] right-[48px] h-[90px] rotate-0 opacity-100  flex justify-between items-center ">
+        <div className=" w-[calc(100%-96px)] h-[80px]   rotate-0 opacity-100  flex justify-between items-center ">
            
             <div className="w-[91.28px] h-[24px]">
                
