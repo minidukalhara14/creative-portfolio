@@ -22,7 +22,7 @@ export default function Hero() {
         
 
            
-        <div className=" w-full h-[calc(100vh-105px)] p-10 bg-amber-600 flex flex-col  items-center relative">
+        <div className=" w-full h-[calc(100vh-105px)] p-10  flex flex-col  items-center relative">
           
           
           <div className="font-semibold text-[190px]  leading-[0.8] tracking-wider text-white flex justify-center items-center overflow-hidden">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AnimatedButton from "./AnimatedButton";
 
 export default function Navibar() {
     return (
@@ -14,13 +15,13 @@ export default function Navibar() {
  
                 <nav className="flex gap-[32px]  ">
                     <div class="p-4 h-[10px] border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
-                        <Link to="/about" className="font-sans  text-[12px] leading-[24px] tracking-normal uppercase align-middle">ABOUT</Link>
+                        <Link to="/about" ><AnimatedButton text="ABOUT" className="font-sans  text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle" /></Link>
                     </div>
                     <div class="p-4 h-[10px] border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
-                        <Link to="/projects" className="font-sans  text-[12px] leading-[24px] tracking-normal uppercase align-middle">WORK</Link>
+                        <Link to="/projects" ><AnimatedButton text="WORK" className="font-sans  text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle"  /></Link>
                     </div>
                     <div class="p-4 h-[10px] border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
-                        <Link to="/contact" className="font-sans  text-[12px] leading-[24px] tracking-normal uppercase align-middle">CONTACT</Link>
+                        <Link to="/contact" ><AnimatedButton text="CONTACT" className="font-sans  text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle" /></Link>
                     </div>
                 </nav>
                     
