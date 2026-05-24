@@ -47,12 +47,6 @@ export default function Hero() {
             </motion.span>
           </div>
 
-          
-
-          
-           
-          
-
         </div>
 
       </div>
