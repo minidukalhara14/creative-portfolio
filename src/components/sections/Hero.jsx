@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import Navibar from '../common/Navibar';
 import AboutMe from '../common/HeroCard';
 import HeroCard from '../common/HeroCard';
+import HeroImage from '../common/HeroImage';
+
+
 
 
 
@@ -21,7 +24,7 @@ export default function Hero() {
         
 
         {/* Content Layer: Centered absolutely within the h-screen boundaries */}
-        <div className=" w-full h-[calc(100vh-105px)] p-10 flex flex-col  items-center relative">
+        <div className=" w-full h-[calc(100vh-105px)] p-10 bg-amber-600 flex flex-col  items-center relative">
           
           {/* First Name */}
           <div className="font-semibold text-[190px]  leading-[0.8] tracking-wider text-white flex justify-center items-center overflow-hidden">
@@ -46,9 +49,12 @@ export default function Hero() {
               DESHAPRIYA
             </motion.span>
           </div>
+           
+          <HeroImage />
+   
 
         </div>
-
+      
       </div>
        
       <HeroCard/>

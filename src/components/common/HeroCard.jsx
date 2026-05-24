@@ -4,6 +4,7 @@ import ScrollButton from "./ScrollButton";
 
 
 
+
 export default function HeroCard() {
 
     
@@ -34,6 +35,8 @@ export default function HeroCard() {
 
                 </div>
                 
+                
+
                 </div>
 
             </div>
