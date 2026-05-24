@@ -24,7 +24,7 @@ export default function Hero() {
         <div className=" w-full h-[calc(100vh-105px)] p-10 flex flex-col  items-center relative">
           
           {/* First Name */}
-          <div className="font-semibold text-[13vw] md:text-[11vw] leading-[0.8] tracking-wider text-white flex justify-center items-center overflow-hidden">
+          <div className="font-semibold text-[190px]  leading-[0.8] tracking-wider text-white flex justify-center items-center overflow-hidden">
             <motion.span
               className="block"
               initial={{ opacity: 0, y: "100%" }}
@@ -36,7 +36,7 @@ export default function Hero() {
           </div>  
 
           {/* Second Name */}
-          <div className="font-semibold text-[180px] mt-[50px] md:text-[150px] leading-[0.8] tracking-wider text-white flex justify-center items-center overflow-hidden mt-4">  
+          <div className="font-semibold text-[190px] mt-[50px]  leading-[0.8] tracking-wider text-white flex justify-center items-center overflow-hidden mt-4">  
             <motion.span
               className="block"
               initial={{ opacity: 0, y: "100%" }}
