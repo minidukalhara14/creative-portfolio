@@ -1,7 +1,6 @@
 import { FaArrowDown } from "react-icons/fa";
 
 
-// Arrow function එක වෙනුවට සාමාන්‍ය Function එකක් විදිහට ලියලා තියෙනවා
 export default function ScrollButton() {
 
  const handleScroll = () => {
