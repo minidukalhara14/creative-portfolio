@@ -3,6 +3,7 @@ import Navibar from '../common/Navibar';
 import AboutMe from '../common/HeroCard';
 import HeroCard from '../common/HeroCard';
 import HeroImage from '../common/HeroImage';
+import AnimatedTable from './AnimatedTable';
 
 
 
@@ -56,6 +57,7 @@ export default function Hero() {
       </div>
        
       <HeroCard/>
+      <AnimatedTable />
 
     </div>
   );
