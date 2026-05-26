@@ -2,6 +2,7 @@ import { FaArrowDown } from "react-icons/fa";
 import ScrollButton from "./ScrollButton";
 import AnimatedButton from "./AnimatedButton";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 
 
@@ -18,10 +19,13 @@ export default function HeroCard() {
   };
 
 
+ 
+
+
     return (
-        <div className="w-[calc(100vw-70px)] h-screen bg-secondary text-primary flex justify-center items-center relative ">
+        <div className="w-[calc(100vw-70px)]  rounded-2xl  text-primary flex justify-center items-center relative ">
             
-            <div className="w-full h-[calc(100%+25px)] absolute -top-[25px] bg-secondary flex items-center flex-col rounded-2xl relative">
+            <div className="w-full h-[calc(100vh+20px)] absolute -top-[30px] bg-secondary flex items-center flex-col rounded-2xl relative">
               
               <div className="absolute -top-[35px] w-[200px] h-[35px] text-white flex items-center justify-center ">
       
@@ -42,25 +46,55 @@ export default function HeroCard() {
 
                 </div>
 
-                <div className="w-[700px] h-[200px] p-6  flex flex-col mt-[150px] items-center justify-center">
-                    <span className="text-[38px] leading-[46px] font-medium tracking-normal text-center">
+                <div className="w-[700px] h-[200px] flex flex-col mt-[150px] items-center ">
+                    <span className="text-[48px] leading-[46px] font-medium tracking-normal text-center">
                         With years of experience in the
                     </span>
-                    <span className="text-[38px] leading-[46px] font-medium tracking-normal text-center">
+                    <span className="text-[48px] leading-[46px] font-medium tracking-normal text-center">
                         industry, I have worked with
                     </span>
-                    <span className="text-[38px] leading-[46px] font-medium tracking-normal text-center">
+                    <span className="text-[48px] leading-[46px] font-medium tracking-normal text-center">
                         businesses of all sizes. 
                     </span>
                 </div>
 
-                <div className="p-4 h-[10px] border border-gray-300 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
+                <div className="p-4 mt-[10px] h-[10px] border border-gray-300 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
                   <Link to="/about" >
                     <AnimatedButton text="EXPLORE MY STORY" />
                   </Link>
                 </div>
 
+                <div className="w-full flex justify-center items-center mt-[70px] py-4">
+                    
+                    <motion.span
+                        
+                        initial={{ y: "100%", opacity: 0 }}
+                        
+                        
+                        whileInView={{ y: 0, opacity: 1 }} 
+                        
+                        
+                        viewport={{ once: true, amount: 0 }} 
+                        
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.76, 0, 0.24, 1], 
+                            delay: 0.2, 
+                        }}
+                        className="block text-[150px] font-semibold uppercase tracking-[0.15em] text-primary leading-none select-none"
+                    >
+                        Since 2014
+                    </motion.span>
+
+                </div>
+
+                <div className="w-[calc(100vw-70px)] absolute bottom-0  h-[70px] bg-secondary  ">
+
+                </div>
+
+                
             </div>
+        
         </div>
     );
 }
