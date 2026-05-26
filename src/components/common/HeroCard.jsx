@@ -25,7 +25,7 @@ export default function HeroCard() {
     return (
         <div className="w-[calc(100vw-70px)]  rounded-2xl  text-primary flex justify-center items-center relative ">
             
-            <div className="w-full h-[calc(100vh+20px)] absolute -top-[30px] bg-secondary flex items-center flex-col rounded-2xl relative">
+            <div className="w-full h-[calc(100%+30px)] absolute -top-[35px] bg-secondary flex items-center flex-col rounded-2xl relative">
               
               <div className="absolute -top-[35px] w-[200px] h-[35px] text-white flex items-center justify-center ">
       
@@ -64,7 +64,7 @@ export default function HeroCard() {
                   </Link>
                 </div>
 
-                <div className="w-full flex justify-center items-center mt-[70px] py-4">
+                <div className="w-full flex justify-center items-center mt-[100px]">
                     
                     <motion.span
                         
@@ -88,7 +88,7 @@ export default function HeroCard() {
 
                 </div>
 
-                <div className="w-[calc(100vw-70px)] absolute bottom-0  h-[70px] bg-secondary  ">
+                <div className="w-[calc(100vw-70px)] absolute bottom-0  h-[70px] bg-secondary rounded-b-2xl   ">
 
                 </div>
 
