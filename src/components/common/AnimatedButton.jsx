@@ -3,7 +3,7 @@ export default function AnimatedButton({ text, onClick, className = "" }) {
     <button
       onClick={onClick}
       
-      className={`relative flex items-center justify-center text-black overflow-hidden group transition-all duration-300 hover:bg-transparent ${className}`}
+      className={`relative flex items-center justify-center text-black cursor-pointer overflow-hidden group transition-all duration-300 hover:bg-transparent ${className}`}
     >
      
       <span className="relative inline-block h-4 overflow-hidden leading-4 text-xs font-medium">
