@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import Navibar from '../common/Navibar';
-import AboutMe from '../common/HeroCard';
-import HeroCard from '../common/HeroCard';
+import AboutMe from '../common/Intro';
 import HeroImage from '../common/HeroImage';
 import AnimatedTable from './AnimatedTable';
+import Intro from '../common/Intro';
 
 
 
@@ -56,7 +56,7 @@ export default function Hero() {
       
       </div>
        
-      <HeroCard/>
+      <Intro/>
       <AnimatedTable />
 
     </div>

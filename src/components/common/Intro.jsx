@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 
 
-export default function HeroCard() {
+export default function Intro() {
 
     
   const handleScroll = () => {
@@ -25,7 +25,7 @@ export default function HeroCard() {
     return (
         <div className="w-[calc(100vw-70px)]  rounded-2xl  text-primary flex justify-center items-center relative ">
             
-            <div className="w-full h-[calc(100%+30px)] absolute -top-[35px] bg-secondary flex items-center flex-col rounded-2xl relative">
+            <div id="intro" className="w-full h-[calc(100%+30px)] absolute -top-[35px] bg-secondary flex items-center flex-col rounded-2xl relative">
               
               <div className="absolute -top-[35px] w-[200px] h-[35px] text-white flex items-center justify-center ">
       
@@ -37,7 +37,7 @@ export default function HeroCard() {
                     <path d="M 100 0 C 130 0, 150 50, 200 50 L 0 50 C 50 50, 70 0, 100 0 Z" />
                 </svg>
                 <div className="absolute top-2 w-full h-full flex justify-center items-center">
-                    <ScrollButton />
+                    <ScrollButton targetId="intro" />
 
                 </div>
 
