@@ -10,19 +10,7 @@ import { motion } from 'framer-motion';
 
 export default function Intro() {
 
-    
-  const handleScroll = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
-  };
-
-
- 
-
-
-    return (
+     return (
         <div className="w-[calc(100vw-70px)]  rounded-2xl  text-primary flex justify-center items-center relative ">
             
             <div id="intro" className="w-full h-[calc(100%+30px)] absolute -top-[35px] bg-secondary flex items-center flex-col rounded-2xl relative">

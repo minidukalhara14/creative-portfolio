@@ -4,6 +4,7 @@ import AboutMe from '../common/Intro';
 import HeroImage from '../common/HeroImage';
 import AnimatedTable from './AnimatedTable';
 import Intro from '../common/Intro';
+import Services from './Services';
 
 
 
@@ -58,6 +59,7 @@ export default function Hero() {
        
       <Intro/>
       <AnimatedTable />
+      <Services />
 
     </div>
   );
