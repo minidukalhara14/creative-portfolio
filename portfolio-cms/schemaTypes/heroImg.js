@@ -11,7 +11,7 @@ export default defineType({
       title: 'Upload Hero Image',
       type: 'image',
       options: {
-        hotspot: true, // ෆොටෝ එක කැමති විදිහට Crop කරගන්න
+        hotspot: true, 
       },
     }),
   ],

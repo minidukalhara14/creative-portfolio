@@ -3,16 +3,16 @@ import { useRef, useState, useEffect } from "react";
 import AnimatedButton from "../common/AnimatedButton";
 import { Link } from "react-router-dom";
 import { client, urlFor } from "../../sanityClient";
- // 💡 සැනිටි ක්ලයන්ට් එක ඉම්පෝර්ට් කරා
+ 
 
 export default function AnimatedTable() {
-  // 💡 සැනිටි එකෙන් එන ප්‍රොජෙක්ට් ඩේටා සේව් කරන්න state දෙකක් හැදුවා
+  
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // සැනිටි එකෙන් ප්‍රොජෙක්ට් විස්තර ඉල්ලන Query එක
-    const query = `*[_type == "project"]{ _id, title, description, image, projectUrl }`;
+    
+    const query = `*[_type == "project"]{ _id, title, projectType, description, image, projectUrl }`;
     
     client
       .fetch(query)
@@ -43,7 +43,7 @@ export default function AnimatedTable() {
         </Link>
       </div>
 
-      {/* 💡 දැන් පරණ tableData වෙනුවට සැනිටි එකෙන් ආපු projects ටික map කරනවා */}
+      
       <div className="w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
         {projects.map((row) => (
           <TableRow key={row._id} row={row} />
@@ -71,7 +71,7 @@ function TableRow({ row }) {
   const moveX = useTransform(smoothMouseX, [-0.5, 0.5], [-60, 60]);
 
   const moveY = useTransform([smoothMouseX, smoothMouseY], ([xVal, yVal]) => {
-    let baseFormY = 0; // 💡 අර තිබ්බ syntax error එක මෙතනින් හැදුවා
+    let baseFormY = 0; 
     if (yVal >= -0.2) {
       const progressY = (yVal - (-0.2)) / (0.5 - (-0.2));
       baseFormY = 0 + (progressY * 40); 
@@ -108,23 +108,23 @@ function TableRow({ row }) {
       onMouseMove={handleMouseMove}
       className="relative grid grid-cols-3 items-center py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d]"
     >
-      {/* 💡 සැනිටි එකේ Project Title එක වැටෙන තැන */}
+      
       <div className="pointer-events-none text-left">
         <h2 className="text-5xl font-medium text-secondary tracking-tight group-hover:translate-x-3 transition-transform duration-300 ease-out">
           {row.title}
         </h2>
       </div>
 
-      {/* 💡 සැනිටි එකේ Description එක (නැත්නම් කැමති නම් වෙන ෆීල්ඩ් එකක්) */}
+      
       <div className="pointer-events-none flex justify-center py-1 rounded"> 
         <span className="text-lg max-w-xs text-center truncate">
-          <AnimatedButton text={row.description || "Development"} className="text-secondary uppercase" /> 
+          <AnimatedButton text={row.projectType || "Development"} className="text-secondary uppercase" /> 
         </span>
       </div>
 
       <div className="pointer-events-none"></div>
 
-      {/* 💡 මවුස් එක උඩට යද්දී හොවර් වෙන සැනිටි ඉමේජ් එක */}
+      
       <motion.div
         style={{
           rotateX: rotateX,
@@ -148,7 +148,7 @@ function TableRow({ row }) {
       >
         {row.image && (
           <img
-            src={urlFor(row.image).url()} // 💡 සැනිටි ඉමේජ් URL එක මෙතනින් ලෝඩ් වෙනවා
+            src={urlFor(row.image).url()} 
             alt={row.title}
             className="w-full h-full object-cover transform scale-105 select-none"
           />
