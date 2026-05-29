@@ -11,8 +11,7 @@ export default function ReviewSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // 💡 සටහන: ඔයා ස්කීමා එකේ name එකට 'reviews' දුන්නා නම් මෙතන _type == "reviews" කරන්න.
-    // 'review' දුන්නා නම් _type == "review" කරන්න. මම මෙතනට 'reviews' දාලා තියන්නම්.
+   
     const query = `*[_type == "reviews"]{ _id, clientName, designation, reviewText, clientImage }`;
     
     client
@@ -27,12 +26,12 @@ export default function ReviewSlider() {
       });
   }, []);
 
-  // Next රිවීව් එකට යන ෆන්ක්ෂන් එක
+  
   const nextReview = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
   };
 
-  // Previous රිවීව් එකට යන ෆන්ක්ෂන් එක
+  
   const prevReview = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
   };
@@ -42,7 +41,7 @@ export default function ReviewSlider() {
   }
 
   if (reviews.length === 0) {
-    return null; // රිවීව්ස් නැත්නම් සෙක්ෂන් එක පෙන්වන්නේ නැහැ
+    return null; 
   }
 
   const current = reviews[currentIndex];
@@ -51,10 +50,10 @@ export default function ReviewSlider() {
     <div className="w-[calc(100vw-70px)] bg-secondary text-white py-24 px-8 flex flex-col justify-center items-center border-t border-white/5">
       <div className="w-full max-w-4xl  bg-black/20 mx-auto flex flex-col items-center text-center rounded-2xl p-8">
         
-        {/* 💬 Quotes Icon හෝ පොඩි හෙඩින් එකක් */}
+        
         <span className="text-primary/40 text-6xl font-serif mb-6 select-none"><GoCodeReview /></span>
 
-        {/* 🔄 ඇනිමේට් වෙමින් මාරු වෙන රිවීව් ටෙක්ස්ට් එක තියෙන ඒරියා එක */}
+       
         <div className="min-h-[180px] flex items-center justify-center px-4 md:px-12">
           <AnimatePresence mode="wait">
             <motion.p
@@ -70,7 +69,7 @@ export default function ReviewSlider() {
           </AnimatePresence>
         </div>
 
-        {/* 👤 ක්ලයන්ට්ගේ විස්තර (නම සහ රූපය) */}
+        
         <div className="mt-8 flex flex-col items-center gap-3">
           {current.clientImage && (
             <img
@@ -85,7 +84,7 @@ export default function ReviewSlider() {
           </div>
         </div>
 
-        {/* 🎛️ Prev / Next බටන් දෙක */}
+        
         <div className="flex items-center gap-8 mt-12 select-none">
           <button 
             onClick={prevReview}
