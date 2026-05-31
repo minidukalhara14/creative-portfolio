@@ -8,7 +8,7 @@ import HomePage from './pages/HomePage'
 import ContactPage from './pages/ContactPage'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <div className="w-full  bg-primary text-secondary flex justify-center items-center ">
