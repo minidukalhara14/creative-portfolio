@@ -3,7 +3,7 @@ import ContactForm from "../components/common/ContactForm";
 import Footer from "../components/common/Footer";
 import Intro from "../components/common/Intro";
 import Navibar from "../components/common/Navibar";
-import AnimatedTable from "../components/sections/AnimatedTable"; s
+import AnimatedTable from "../components/sections/AnimatedTable"; 
 
 
 export default function ContactPage() {

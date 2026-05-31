@@ -5,14 +5,18 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="w-full h-screen bg-primary text-secondary flex justify-center items-center ">
+    <div className="w-full  bg-primary text-secondary flex justify-center items-center ">
       <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<div>About Page</div>} />
+          <Route path="/projects" element={<div>Projects Page</div>} />
+          <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>
   )
