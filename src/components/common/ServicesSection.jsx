@@ -34,11 +34,11 @@ export default function ServicesSection() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-secondary text-white px-8 flex justify-center items-center">
-      <div className="w-full min-h-screen max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+    <div className="w-full min-h-screen bg-secondary text-white px-8 flex justify-center items-center relative">
+      <div className="w-full absolute top-0 min-h-screen max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         
         
-        <div className="flex flex-col border-t border-black mt-20 md:mt-24">
+        <div className="flex flex-col border-t border-black mt-10">
           {services.map((service, index) => {
             const isOpen = activeIndex === index;
             

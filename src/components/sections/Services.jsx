@@ -57,6 +57,8 @@ export default function Services() {
 
                 <div className="w-full flex flex-col justify-center items-center mt-[70px] relative">
                     
+                     <div className="w-full flex justify-center items-center mt-[100px]">
+                    
                     <motion.span
                         
                         initial={{ y: "100%", opacity: 0 }}
@@ -72,12 +74,15 @@ export default function Services() {
                             ease: [0.76, 0, 0.24, 1], 
                             delay: 0.2, 
                         }}
-                        className="block text-[150px] uppercase tracking-normal font-ultra-expanded text-primary leading-none select-none"
+                        className="block text-[150px] font-semibold uppercase tracking-[0.15em] text-primary leading-none select-none"
                     >
-                        My Services
+                        Since 2014
                     </motion.span>
 
-                   <div className="w-full h-[50px]  bg-secondary absolute bottom-0">
+                </div>
+
+
+                   <div className="w-full h-[180px]  bg-secondary absolute -bottom-[150px]">
 
                    </div>
 
