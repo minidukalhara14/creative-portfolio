@@ -47,7 +47,7 @@ export default function ReviewSlider() {
   const current = reviews[currentIndex];
 
   return (
-    <div className="w-[calc(100vw-70px)] bg-secondary text-white py-24 px-8 flex flex-col justify-center items-center border-t border-white/5">
+    <div className="w-[calc(100vw-70px)] bg-secondary text-white py-24 px-8 flex flex-col justify-center items-center border-t rounded-b-2xl border-white/5">
       <div className="w-full max-w-4xl  bg-black/20 mx-auto flex flex-col items-center text-center rounded-2xl p-8">
         
         
