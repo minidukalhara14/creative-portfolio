@@ -19,7 +19,7 @@ export default function Footer() {
           
           
           <Link
-            to="/contact" 
+            to="/contact" reloadDocument 
             className="p-4 border text-[10px] border-solid border-white/20 rounded-full hover:border-white/50 transition-colors duration-300 group"
           >
             <AnimatedButton text="Schedule a Call" className="text-secondary uppercase tracking-wider text-[10px]" />
@@ -40,13 +40,13 @@ export default function Footer() {
       <Link to="/" reloadDocument className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
         Home
       </Link>
-      <Link to="/about" className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
+      <Link to="/about" reloadDocument className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
         About
       </Link>
-      <Link to="/projects" className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
+      <Link to="/projects" reloadDocument className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
         Project
       </Link>
-      <Link to="/contact" className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
+      <Link to="/contact" reloadDocument  className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
         Call Me
       </Link>
     </nav>

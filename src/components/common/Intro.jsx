@@ -76,7 +76,7 @@ export default function Intro() {
 
                 </div>
 
-                <div className="w-[calc(100vw-70px)] absolute bottom-0  h-[70px] bg-secondary rounded-b-2xl   ">
+                <div className="w-[calc(100vw-70px)] absolute bottom-0  h-[35px] bg-secondary rounded-b-2xl   ">
 
                 </div>
 
