@@ -21,9 +21,9 @@ export default function Hero() {
       <div className="w-full h-screen  flex justify-center items-center flex-col overflow-hidden select-none">
         
         
-        
-          <Navibar />
-        
+        <div className="w-full h-[80px]  flex justify-center items-center absolute top-0">
+            <Navibar />
+        </div>
 
            
         <div className=" w-full h-[calc(100vh-105px)] p-10  flex flex-col  items-center relative">
