@@ -14,13 +14,13 @@ export default function Navibar() {
             
  
                 <nav className="flex gap-[32px]  ">
-                    <div class="p-4 h-[10px] border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
+                    <div class="p-4 h-[10px] cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
                         <Link to="/about" ><AnimatedButton text="ABOUT" className="font-sans  text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle" /></Link>
                     </div>
-                    <div class="p-4 h-[10px] border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
+                    <div class="p-4 h-[10px] cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
                         <Link to="/projects" ><AnimatedButton text="WORK" className="font-sans  text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle"  /></Link>
                     </div>
-                    <div class="p-4 h-[10px] border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
+                    <div class="p-4 h-[10px] cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center ">
                         <Link to="/contact" reloadDocument  ><AnimatedButton text="CONTACT" className="font-sans  text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle" /></Link>
                     </div>
                 </nav>
