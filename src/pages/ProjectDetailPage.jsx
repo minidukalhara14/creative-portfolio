@@ -52,7 +52,7 @@ export default function ProjectDetailPage() {
     const { title, projectType, images, description, projectUrl } = project;
 
     return (
-        /* මුළු පිටුවම flex column එකක් කරලා content එක මැදට ගෙන min-h-screen එකක් දුන්නා */
+        
         <div className="min-h-screen w-full flex flex-col bg-primary text-secondary items-center overflow-x-hidden">
             
             {/* Navibar Container */}
@@ -60,7 +60,7 @@ export default function ProjectDetailPage() {
                 <Navibar />
             </div>
 
-            {/* Title & Description Area (කලින් absolute එක අයින් කරලා flex-col කරා) */}
+            
             <div className="w-[calc(100vw-70px)] py-20 flex flex-col justify-center items-center select-none text-center">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -73,17 +73,17 @@ export default function ProjectDetailPage() {
                     </h1>
                 </motion.div>
                 
-                {/* Description එක හරියටම මැදට ගන්න text-center සහ mx-auto දාලා තියෙනවා */}
+              
                 <span className="text-sm max-w-[700px] w-full font-mono uppercase mt-8 text-zinc-400 tracking-wider block px-4 leading-relaxed text-center mx-auto">
                     {description || 'Web Development'}
                 </span>
             </div>
 
-            {/* Content Section (කලින් තිබ්බ absolute top-[480px] අයින් කරලා සාමාන්‍ย flow එකට ගත්තා) */}
+            
             <div className="w-[calc(100vw-70px)] rounded-2xl text-primary flex justify-center items-center relative mb-24">
                 <div id="intro" className="w-full h-auto min-h-[500px] bg-secondary flex items-center flex-col rounded-2xl relative p-8 md:p-16">
                     
-                    {/* SVG Curve Tab with Scroll Button */}
+                   
                     <div className="absolute -top-[34px] w-[200px] h-[35px] text-white flex items-center justify-center ">
                         <svg
                             viewBox="0 0 200 50"
@@ -104,7 +104,7 @@ export default function ProjectDetailPage() {
                         </span>
                         {project.projectUrl && (
                             <a 
-                                href={project.projectUrl} // <-- මෙතනටත් projectUrl දෙන්න
+                                href={project.projectUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-500 hover:text-primary transition-all duration-300"
@@ -138,7 +138,7 @@ export default function ProjectDetailPage() {
                 </div>
             </div>
 
-            {/* Footer Container - දැන් මෙය කිසිම හිරවීමක් නැතුව පිටුවේ අන්තිමටම පෙනේවි */}
+           
             <div className="w-full mt-auto">
                 <Footer />
             </div>
