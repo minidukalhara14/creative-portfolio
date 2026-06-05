@@ -12,7 +12,7 @@ export default function AnimatedTable() {
 
   useEffect(() => {
     
-    const query = `*[_type == "project"]{ _id, title, projectType, description, image, projectUrl }`;
+    const query = `*[_type == "project"]{ _id, title, projectType, description, images, projectUrl }`;
     
     client
       .fetch(query)
@@ -146,9 +146,9 @@ function TableRow({ row }) {
         }}
         className="pointer-events-none absolute right-16 top-1/2 z-50 w-[150px] h-[180px] overflow-hidden rounded-xl shadow-2xl border border-white/20 origin-center"
       >
-        {row.image && (
+        {row.images && row.images[0] && (
           <img
-            src={urlFor(row.image).url()} 
+            src={urlFor(row.images[0]).url()} 
             alt={row.title}
             className="w-full h-full object-cover transform scale-105 select-none"
           />

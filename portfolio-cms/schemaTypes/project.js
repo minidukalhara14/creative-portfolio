@@ -25,13 +25,22 @@ export default defineType({
       title: 'Full Description',
       type: 'text', 
     }),
-    defineField({
-      name: 'image',
-      title: 'Project Image',
-      type: 'image',
+   defineField({
+  name: 'images', // බහුවචනයක් (Plural) පාවිච්චි කිරීම වඩාත් සුදුසුයි
+  title: 'Project Images',
+  type: 'array', // මුලින්ම type එක array එකක් විදිහට දෙනවා
+  of: [
+    {
+      type: 'image', // Array එක ඇතුලට දාන්නේ images කියලා කියනවා
       options: {
-        hotspot: true,
+        hotspot: true, // හැම image එකකටම hotspot option එක මෙතනින් ලැබෙනවා
       },
+    },
+  ],
+  options: {
+    layout: 'grid', // සැනිටි ඩෑෂ්බෝඩ් එකේ ඉමේජස් ටික ග්‍රිඩ් එකක් වගේ ලස්සනට පේන්න මේක දාන්න පුළුවන් (Optional)
+  },
+
     }),
     defineField({
       name: 'projectUrl',

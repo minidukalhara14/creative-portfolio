@@ -13,7 +13,7 @@ export default function ProjectPage() {
   useEffect(() => {
     
     client
-      .fetch(`*[_type == "project"]{ _id, title, projectType, image }`)
+      .fetch(`*[_type == "project"]{ _id, title, projectType, images, projectUrl }`)
       .then((data) => setProjects(data))
       .catch(console.error);
   }, []);

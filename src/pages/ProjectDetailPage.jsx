@@ -16,9 +16,9 @@ export default function ProjectDetailPage() {
         const query = `*[_type == "project" && _id == $id][0]{
             title,
             projectType,
-            image,
+            images,
             description,
-            liveLink
+            projectUrl
         }`;
 
         client
@@ -49,7 +49,7 @@ export default function ProjectDetailPage() {
         );
     }
 
-    const { title, projectType, image, description } = project;
+    const { title, projectType, images, description, projectUrl } = project;
 
     return (
         /* මුළු පිටුවම flex column එකක් කරලා content එක මැදට ගෙන min-h-screen එකක් දුන්නා */
@@ -79,7 +79,7 @@ export default function ProjectDetailPage() {
                 </span>
             </div>
 
-            {/* Content Section (කලින් තිබ්බ absolute top-[480px] අයින් කරලා සාමාන්‍ය flow එකට ගත්තා) */}
+            {/* Content Section (කලින් තිබ්බ absolute top-[480px] අයින් කරලා සාමාන්‍ย flow එකට ගත්තා) */}
             <div className="w-[calc(100vw-70px)] rounded-2xl text-primary flex justify-center items-center relative mb-24">
                 <div id="intro" className="w-full h-auto min-h-[500px] bg-secondary flex items-center flex-col rounded-2xl relative p-8 md:p-16">
                     
@@ -97,14 +97,14 @@ export default function ProjectDetailPage() {
                         </div>
                     </div>
 
-                    {/* Meta bar */}
-                    <div className="w-full h-[100px] border-b border-zinc-700/30 flex flex-row items-center justify-center gap-10">
+                   
+                    <div className="w-full h-[100px] border-b border-zinc-700/30 flex flex-row items-center justify-between gap-10">
                         <span className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-500">
                             {projectType || 'General'}
                         </span>
-                        {project.liveLink && (
+                        {project.projectUrl && (
                             <a 
-                                href={project.liveLink} 
+                                href={project.projectUrl} // <-- මෙතනටත් projectUrl දෙන්න
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-500 hover:text-primary transition-all duration-300"
@@ -114,21 +114,25 @@ export default function ProjectDetailPage() {
                         )}
                     </div>
 
-                    {/* Image Inner Box */}
-                    <div className="w-full max-w-[800px] aspect-[4/3] bg-sky-800/10 flex mt-8 justify-center items-center rounded-2xl p-4 md:p-8">
-                        <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl">
-                            {image ? (
-                                <img 
-                                    src={urlFor(image).url()} 
-                                    alt={title} 
-                                    className="w-full h-full object-cover"
-                                />
-                            ) : (
-                                <div className="w-full h-full bg-zinc-800 text-zinc-400 flex items-center justify-center">
-                                    No Image Available
+                    
+                    <div className="w-full max-w-[800px] flex flex-col gap-6 mt-8">
+                        {images && images.length > 0 ? (
+                            images.map((img, index) => (
+                                <div key={index} className="w-full aspect-[4/3] bg-sky-800/10 rounded-2xl p-4 md:p-8">
+                                    <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl">
+                                        <img 
+                                            src={urlFor(img).url()} 
+                                            alt={`${title} - ${index + 1}`} 
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
                                 </div>
-                            )}
-                        </div>
+                            ))
+                        ) : (
+                            <div className="w-full aspect-[4/3] bg-zinc-800 text-zinc-400 flex items-center justify-center rounded-2xl">
+                                No Image Available
+                            </div>
+                        )}
                     </div>
 
                 </div>
