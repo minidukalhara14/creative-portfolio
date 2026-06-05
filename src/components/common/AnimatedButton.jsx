@@ -1,8 +1,6 @@
-export default function AnimatedButton({ text, onClick, className = "" }) {
+export default function AnimatedButton({ text, className = "" }) {
   return (
-    <button
-      onClick={onClick}
-      
+    <div
       className={`relative flex items-center justify-center text-black cursor-pointer overflow-hidden group transition-all duration-300 hover:bg-transparent ${className}`}
     >
      
@@ -17,6 +15,6 @@ export default function AnimatedButton({ text, onClick, className = "" }) {
         </span>
         
       </span>
-    </button>
+    </div>
   );
 }

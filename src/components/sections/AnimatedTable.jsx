@@ -44,11 +44,11 @@ export default function AnimatedTable() {
       </div>
 
       
-      <div className="w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
+      <Link to="/projects" className="w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
         {projects.map((row) => (
           <TableRow key={row._id} row={row} />
         ))}
-      </div>
+      </Link>
     </div>
   );
 }
