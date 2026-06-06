@@ -3,12 +3,43 @@ import ScrollButton from "./ScrollButton";
 import AnimatedButton from "./AnimatedButton";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
+import { useState } from "react";
+import { useEffect } from "react";
+import { client } from "../../sanityClient";
 
 
 
 
 
 export default function AboutMeCard() {
+
+    const [experiences, setExperiences] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // 2. ඔයා ලියපු GROQ Query එක
+    const query = `*[_type == "experience"]{
+      _id,
+      experienceTitle,
+      experienceDescription,
+      experienceTimeframe
+    }`;
+
+    // 3. සැනිටි එකෙන් Data Fetch කරන කොටස
+    client
+      .fetch(query)
+      .then((data) => {
+        setExperiences(data); // ආපු Data ටික state එකට දානවා
+        setLoading(false);    // Loading එක ඉවරයි කියනවා
+      })
+      .catch((err) => {
+        console.error("Sanity fetching error in experiences:", err);
+        setLoading(false);
+      });
+  }, []); // 💡 හිස් Array එකක් ([]) දැම්මම මේක රන් වෙන්නේ පිටුව Load වෙද්දී එක පාරක් විතරයි.
+
+  // Loading ස්ක්‍රීන් එකක් (Optional)
+  if (loading) return <div className="text-white text-center">Loading Journey...</div>;
 
      return (
         <div className="w-[calc(100vw-70px)]  rounded-2xl  text-primary flex justify-center items-center relative ">
@@ -72,7 +103,9 @@ export default function AboutMeCard() {
 
                 </div>
 
-                <div className="w-[calc(100vw-70px)] absolute bottom-0  h-[35px] bg-secondary rounded-b-2xl   "></div>
+                <div className="w-[calc(100vw-70px)] absolute  bottom-0  h-[35px] bg-secondary rounded-b-2xl   ">
+
+                </div>
                 
             <div className="w-full max-w-6xl mx-auto px-6 py-16 md:py-24">
                
@@ -132,10 +165,60 @@ export default function AboutMeCard() {
 
                 </div>
                 </div>
+<span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 sticky top-0 bg-transparent pb-4 z-10">
+    My Journey & Experience
+  </span>
+              
+<div className="w-full h-[400px] mt-5 pt-10 border-t border-zinc-800/50 flex flex-col items-center gap-6 overflow-y-auto scrollbar-none snap-y snap-mandatory pb-6">
+  
+  
+  
 
-                <div className="w-full h-[500px] bg-amber-600 mt-5 pt-6 border-t border-zinc-800/50 rounded-bottom-2xl flex justify-center items-center gap-8">
+  <div className="w-full max-w-2xl px-4 flex flex-col gap-6">
+    {experiences && experiences.length > 0 ? (
+      experiences.map((exp) => (
+        <div 
+          key={exp._id} 
+         
+          className="w-full h-[250px] min-h-[250px] bg-zinc-900/40 border border-zinc-800/50 p-8 rounded-2xl flex flex-col justify-between hover:border-zinc-700 transition-all duration-300 group snap-center shadow-xl"
+        >
+          
+          <div>
+            <div className="flex justify-between items-center mb-4">
+           
+              <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider bg-zinc-800/60 px-3 py-1 rounded-full">
+                {exp.experienceTimeframe || "Present"}
+              </span>
+            </div>
 
-                </div>
+           
+            <h4 className="text-xl font-medium tracking-wide text-black uppercase group-hover:text-white transition-colors duration-300">
+              {exp.experienceTitle}
+            </h4>
+          </div>
+
+         
+          <p className="text-sm text-black font-sans font-light leading-relaxed mt-4 line-clamp-4 group-hover:text-zinc-300 transition-colors duration-300">
+            {exp.experienceDescription}
+          </p>
+        </div>
+      ))
+    ) : (
+      
+      <div className="w-full text-center py-10 text-zinc-500 font-mono text-sm">
+        No Experience Records Found.
+      </div>
+    )}
+  </div>
+
+ 
+  {experiences && experiences.length > 1 && (
+    <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 animate-pulse mt-2">
+      ↓ Scroll Down to View More Journey ↓
+    </span>
+  )}
+
+</div>
                 
             </div>
         
