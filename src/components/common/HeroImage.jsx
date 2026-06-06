@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { client, urlFor } from "../../sanityClient"; 
 
-export default function HeroPhoto() {
+export default function HeroImage() {
   const [heroData, setHeroData] = useState(null);
   const [loading, setLoading] = useState(true); 
 
