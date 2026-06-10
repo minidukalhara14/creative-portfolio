@@ -61,7 +61,7 @@ export default function Navibar() {
                 </Link>
             </div>
             <div className="w-full text-center p-3 border border-solid border-slate-700 rounded-full bg-transparent flex justify-center items-center">
-                <Link to="/" reloadDocument onClick={() => setIsOpen(false)} className="w-full">
+                <Link to="/contact" reloadDocument onClick={() => setIsOpen(false)} className="w-full">
                   <AnimatedButton text="CONTACT" className="font-sans text-[14px] text-secondary tracking-normal uppercase" />
                 </Link>
             </div>
