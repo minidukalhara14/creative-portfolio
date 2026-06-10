@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaFacebookF } from "react-icons/fa"; // 💡 React Icons ඉම්පෝර්ට් කරා
-import AnimatedButton from "./AnimatedButton"; // 💡 ඔයාගේ බටන් එක
+import { FaGithub, FaLinkedin, FaFacebookF } from "react-icons/fa"; 
+import AnimatedButton from "./AnimatedButton"; 
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="w-full bg-primary text-white pt-24 pb-12 px-8 border-t border-white/5 flex flex-col items-center justify-center">
       <div className="w-full max-w-6xl mx-auto flex flex-col justify-between h-full">
         
-        {/* ⬆️ උඩ කොටස: Description සහ Big Button */}
+       
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-24 select-none">
           <h2 className="text-xl  font-medium tracking-wide leading-tight mb-10 text-secondary">
             Whether you need design or tweak some <br/>
@@ -26,15 +26,15 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* ⬇️ Bottom Footer Bar: තුන් පැත්තට සමබරව බෙදී යන පරිදි සකසා ඇත */}
+       
 <div className="w-full border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-6 text-center md:text-left">
   
-  {/* 1️⃣ වම් පැත්ත: Copyrights විස්තරය */}
+ 
   <div className="text-sm font-light text-secondary/50 select-none md:justify-self-start">
     © {currentYear} Writings for Developers. All Rights Reserved.
   </div>
 
-  {/* 2️⃣ මැද කොටස: Navigation Bar (Home, About, Project, Call Me) */}
+ 
   <div className="md:justify-self-center">
     <nav className="flex items-center justify-center gap-6 select-none">
       <Link to="/" reloadDocument className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
@@ -52,7 +52,7 @@ export default function Footer() {
     </nav>
   </div>
 
-  {/* 3️⃣ දකුණු පැත්ත: Social Media Icon Links */}
+  
   <div className="flex items-center justify-center md:justify-self-end gap-4">
     
     {/* GitHub Link */}
@@ -65,7 +65,7 @@ export default function Footer() {
       <FaGithub className="text-sm" />
     </a>
 
-    {/* LinkedIn Link */}
+    
     <a 
       href="https://linkedin.com/in/your-username" 
       target="_blank" 
@@ -75,7 +75,7 @@ export default function Footer() {
       <FaLinkedin className="text-sm" />
     </a>
 
-    {/* Facebook Link */}
+    
     <a 
       href="https://facebook.com/your-profile" 
       target="_blank" 

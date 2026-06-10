@@ -55,7 +55,7 @@ export default function ProjectDetailPage() {
         
         <div className="min-h-screen w-full flex flex-col bg-primary text-secondary items-center overflow-x-hidden">
             
-            {/* Navibar Container */}
+          
             <div className="w-full h-[80px] flex justify-center items-center z-50">
                 <Navibar />
             </div>
@@ -80,7 +80,7 @@ export default function ProjectDetailPage() {
             </div>
 
             
-            <div className="w-[calc(100vw-70px)] rounded-2xl text-primary flex justify-center items-center relative mb-24">
+            <div className="w-[calc(100vw-30px)] lg:w-[calc(100vw-70px)] rounded-2xl text-primary flex justify-center items-center relative mb-24">
                 <div id="intro" className="w-full h-auto min-h-[500px] bg-secondary flex items-center flex-col rounded-2xl relative p-8 md:p-16">
                     
                    

@@ -3,15 +3,12 @@ import { useRef, useState, useEffect } from "react";
 import AnimatedButton from "../common/AnimatedButton";
 import { Link } from "react-router-dom";
 import { client, urlFor } from "../../sanityClient";
- 
 
 export default function AnimatedTable() {
-  
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    
     const query = `*[_type == "project"]{ _id, title, projectType, description, images, projectUrl }`;
     
     client
@@ -31,20 +28,21 @@ export default function AnimatedTable() {
   }
 
   return (
-    <div className="w-full min-h-screen text-white flex flex-col justify-center items-center ">
-      <div className="w-full max-w-6xl flex justify-center items-center flex-col mx-auto mb-16 px-4 py-12 text-center">
-        <h1 className="text-xl mb-15 font-medium tracking-tight text-white leading-tight max-w-4xl select-none">
-          I have worked with businesses of all sizes to<br/>
-          create stunning websites and designs that<br/>
+    <div className="w-full min-h-screen text-white flex flex-col justify-center items-center">
+      <div className="w-full max-w-6xl flex justify-center items-center flex-col mx-auto mb-8 md:mb-16 px-6 py-12 text-center">
+       
+        <h1 className="text-2xl md:text-xl mb-10 md:mb-15 font-medium tracking-tight text-white leading-tight max-w-4xl select-none">
+          I have worked with businesses of all sizes to<br className="hidden md:inline"/>
+          create stunning websites and designs that<br className="hidden md:inline"/>
           capture their brand's identity.
         </h1>
-        <Link to="/projects" className=" px-6 py-3 border border-solid border-white/20 rounded-full">
+        <Link to="/projects" className="px-6 py-3 border border-solid border-white/20 rounded-full">
           <AnimatedButton text="View Projects" className="text-secondary uppercase" />
         </Link>
       </div>
 
-      
-      <Link to="/projects" className="w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
+     
+      <Link to="/projects" className="w-[90%] md:w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
         {projects.map((row) => (
           <TableRow key={row._id} row={row} />
         ))}
@@ -81,6 +79,7 @@ function TableRow({ row }) {
   });
 
   const handleMouseMove = (e) => {
+    if (window.innerWidth < 768) return; 
     if (!ref.current) return;
     
     const rect = ref.current.getBoundingClientRect();
@@ -106,23 +105,26 @@ function TableRow({ row }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="relative grid grid-cols-3 items-center py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d]"
+      
+      className="relative grid grid-cols-1 md:grid-cols-3 items-start md:items-center py-6 md:py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d] gap-2 md:gap-0"
     >
       
+     
       <div className="pointer-events-none text-left">
-        <h2 className="text-5xl font-medium text-secondary tracking-tight group-hover:translate-x-3 transition-transform duration-300 ease-out">
+        <h2 className="text-3xl md:text-5xl font-medium text-secondary tracking-tight group-hover:translate-x-0 md:group-hover:translate-x-3 transition-transform duration-300 ease-out">
           {row.title}
         </h2>
       </div>
 
       
-      <div className="pointer-events-none flex justify-center py-1 rounded"> 
-        <span className="text-lg max-w-xs text-center truncate">
+      <div className="pointer-events-none flex justify-start md:justify-center py-1 rounded"> 
+        <span className="text-sm md:text-lg max-w-xs text-center truncate opacity-60 md:opacity-100">
           <AnimatedButton text={row.projectType || "Development"} className="text-secondary uppercase" /> 
         </span>
       </div>
 
-      <div className="pointer-events-none"></div>
+      
+      <div className="pointer-events-none hidden md:block"></div>
 
       
       <motion.div
@@ -144,7 +146,7 @@ function TableRow({ row }) {
           stiffness: 200,
           damping: 20,
         }}
-        className="pointer-events-none absolute right-16 top-1/2 z-50 w-[150px] h-[180px] overflow-hidden rounded-xl shadow-2xl border border-white/20 origin-center"
+        className="hidden md:block pointer-events-none absolute right-16 top-1/2 z-50 w-[150px] h-[180px] overflow-hidden rounded-xl shadow-2xl border border-white/20 origin-center"
       >
         {row.images && row.images[0] && (
           <img

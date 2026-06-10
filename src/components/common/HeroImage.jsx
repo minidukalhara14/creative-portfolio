@@ -25,6 +25,9 @@ export default function HeroImage() {
   const mouseY = useMotionValue(0);
 
   const handleMouseMove = (e) => {
+   
+    if (window.innerWidth < 768) return; 
+
     const { clientX, clientY } = e;
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -56,16 +59,17 @@ export default function HeroImage() {
     return baseFormY + arcDrop;
   });
 
-  
   if (loading) {
-    return <div className="absolute top-0 flex w-full h-full justify-center items-center text-white/40">Loading Image...</div>;
+    
+    return <div className="absolute md:top-0 flex w-full h-auto md:h-full justify-center items-center text-white/40 py-10">Loading Image...</div>;
   }
 
   return (
     <div 
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave} 
-      className="absolute top-0 flex w-full h-full justify-center [perspective:1200px]"
+      
+      className="relative md:absolute md:top-0 flex w-full h-auto md:h-full justify-center items-center [perspective:1200px] mt-8 md:mt-0 z-10"
     >
       <motion.div
         initial={{
@@ -91,21 +95,24 @@ export default function HeroImage() {
       >
         <motion.div
           style={{
-            rotateX: rotateX,
-            rotateY: rotateY,
-            rotateZ: rotateZ,
-            x: moveX,
-            y: moveY, 
+            
+            rotateX: typeof window !== "undefined" && window.innerWidth < 768 ? 0 : rotateX,
+            rotateY: typeof window !== "undefined" && window.innerWidth < 768 ? 0 : rotateY,
+            rotateZ: typeof window !== "undefined" && window.innerWidth < 768 ? 0 : rotateZ,
+            x: typeof window !== "undefined" && window.innerWidth < 768 ? 0 : moveX,
+            y: typeof window !== "undefined" && window.innerWidth < 768 ? 10 : moveY, 
             transformStyle: "preserve-3d",
           }}
-          className="relative flex h-[330px] w-[250px] items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-[#1e1e2f] to-[#111119] shadow-xl"
+          
+          className="relative flex h-[260px] w-[200px] md:h-[330px] md:w-[250px] items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-[#1e1e2f] to-[#111119] shadow-xl"
         >
           
           {heroData?.heroImage ? (
             <img
               src={urlFor(heroData.heroImage).url()}
               alt="Hero Element"
-              className="w-[250px] h-[330px] select-none object-cover drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)]"
+            
+              className="w-[200px] h-[260px] md:w-[250px] md:h-[330px] select-none object-cover drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)]"
             />
           ) : (
             <div className="text-white/20 text-xs">No Image Uploaded</div>
