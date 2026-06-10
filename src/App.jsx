@@ -5,10 +5,10 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
-import ContactPage from './pages/ContactPage'
 import ProjectPage from './pages/ProjectPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import AboutMePage from './pages/AboutMePage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
  
@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutMePage />} />
           <Route path="/projects" element={<ProjectPage />} />
-          
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/projects/:id" element={<ProjectDetailPage />} />
       </Routes>
     </div>
