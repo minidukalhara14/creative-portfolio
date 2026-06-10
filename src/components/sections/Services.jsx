@@ -3,7 +3,9 @@ import ScrollButton from "../common/ScrollButton";
 import AnimatedButton from "../common/AnimatedButton";
 import { motion } from 'framer-motion';
 import ServicesSection from "../common/ServicesSection";
-import ReviewSlider from "../common/Review.Slider";
+import { RectangleVertical } from "lucide-react";
+import ReviewSlider from "../common/ReviewSlider";
+
 
 export default function Services() {
 
@@ -69,7 +71,7 @@ export default function Services() {
                     <ServicesSection />
                 </div>
                 
-            <ReviewSlider />
+            <ReviewSlider/>
         
             </div>
             
