@@ -26,8 +26,8 @@ export default function Intro() {
                     </div>
               </div>
 
-                <div className="w-full max-w-[900px] min-h-[150px] mt-[100px] md:mt-[140px] mx-auto px-4">
-                    <span className="text-[22px] sm:text-[30px] md:text-[42px] leading-[1.4] font-medium text-center block">
+                <div className="w-full max-w-[800px] min-h-[150px] mt-[100px] md:mt-[140px] mx-auto px-4">
+                    <span className="text-[18px] sm:text-[25px] md:text-[35px] leading-[1.4] font-medium text-center block">
                         With over a decade of experience in mechanical engineering,
                         I design machines and products that are built to perform —
                         and built to last.
