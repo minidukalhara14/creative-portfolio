@@ -42,6 +42,8 @@ export default function Hero() {
 
           {/* First Name */}
           <div className="
+            lg:mt-0
+            mt-[200px]
             font-semibold
             text-[48px]
             xs:text-[60px]
@@ -80,9 +82,9 @@ export default function Hero() {
             xs:text-[60px]
             sm:text-7xl
             md:text-[190px]
-            mt-[100px]
+            mt-2
             sm:mt-3
-            md:mt-[50px]
+            md:mt-[50px] 
             leading-[0.85]
             md:leading-[0.8]
             tracking-wide
