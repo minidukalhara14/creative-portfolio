@@ -115,7 +115,8 @@ export default function Hero() {
             flex
             justify-center
             items-center
-            mt-4
+            mt-[100px]
+            lg:mt-4
             sm:mt-6
             md:mt-0
           ">
