@@ -80,7 +80,7 @@ export default function Hero() {
             xs:text-[60px]
             sm:text-7xl
             md:text-[190px]
-            mt-2
+            mt-[100px]
             sm:mt-3
             md:mt-[50px]
             leading-[0.85]
