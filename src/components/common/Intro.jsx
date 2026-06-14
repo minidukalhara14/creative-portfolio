@@ -10,7 +10,7 @@ export default function Intro() {
         <div className="w-full md:w-[calc(100vw-70px)] rounded-2xl text-primary flex justify-center items-center relative px-4 md:px-0">
             
            
-            <div id="intro" className="w-full h-auto lg:h-[calc(100vh+30px)] absolute -top-[80px] bg-secondary flex items-center flex-col rounded-2xl relative pb-12 md:pb-0">
+            <div id="intro" className="w-full  lg:h-[calc(100vh+30px)] absolute -top-[80px] bg-secondary flex items-center flex-col rounded-2xl relative pb-12 md:pb-0">
               
              
               <div className="absolute -top-[34px] w-[160px] sm:w-[200px] h-[35px] text-white flex items-center justify-center">
