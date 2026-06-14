@@ -32,9 +32,11 @@ export default function AnimatedTable() {
       <div className="w-full max-w-6xl flex justify-center items-center flex-col mx-auto mb-8 md:mb-16 px-6 py-12 text-center">
        
         <h1 className="text-2xl md:text-xl mb-10 md:mb-15 font-medium tracking-tight text-white leading-tight max-w-4xl select-none">
-          I have worked with businesses of all sizes to<br className="hidden md:inline"/>
-          create stunning websites and designs that<br className="hidden md:inline"/>
-          capture their brand's identity.
+          I work with manufacturers, startups, and product companies worldwide
+          <br className="hidden md:inline" />
+          to bring complex engineering ideas to life through precision
+          <br className="hidden md:inline" />
+          SolidWorks design.
         </h1>
         <Link to="/projects" className="px-6 py-3 border border-solid border-white/20 rounded-full">
           <AnimatedButton text="View Projects" className="text-secondary uppercase" />
@@ -42,7 +44,7 @@ export default function AnimatedTable() {
       </div>
 
      
-      <Link to="/projects" className="w-[90%] md:w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
+      <Link  to={`/projects/${_id}`}  className="w-[90%] md:w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
         {projects.map((row) => (
           <TableRow key={row._id} row={row} />
         ))}

@@ -34,9 +34,11 @@ export default function Services() {
                
                 <div className="w-full max-w-6xl mt-20 flex justify-center items-center flex-col mx-auto px-4 py-8 md:py-12 text-center">
                     <h1 className="text-2xl md:text-xl font-medium tracking-wide text-primary leading-tight max-w-4xl select-none">
-                       I have worked with businesses of all sizes to<br className="hidden md:inline"/>
-                       create stunning websites and designs that<br className="hidden md:inline"/>
-                       capture their brand's identity.
+                        Have a machine to build or a product to bring to life?
+                        <br className="hidden md:inline" />
+                        I have the engineering expertise to take your project
+                        <br className="hidden md:inline" />
+                        from idea to production-ready design.
                     </h1>
                 </div>
 
@@ -57,10 +59,10 @@ export default function Services() {
                                 ease: [0.76, 0, 0.24, 1], 
                                 delay: 0.2, 
                             }}
-                            className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.15em] text-primary leading-none select-none text-center"
+                            className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center"
                         >
-                            Since 2014
-                        </motion.span>
+                            MY SERVICES
+                        </motion.span> 
                     </div>
 
                     <div className="hidden md:block w-full h-[180px] bg-secondary absolute -bottom-[150px]"></div>

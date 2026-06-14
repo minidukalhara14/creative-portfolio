@@ -12,9 +12,8 @@ export default function Footer() {
        
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-24 select-none">
           <h2 className="text-xl  font-medium tracking-wide leading-tight mb-10 text-secondary">
-            Whether you need design or tweak some <br/>
-            code,I have the skills and creativity needed <br/>
-             to take your project to the next level.
+            Have a machine to build or a product to bring to life?<br />
+            Let's talk about your project.
             </h2>
           
           
@@ -31,7 +30,7 @@ export default function Footer() {
   
  
   <div className="text-sm font-light text-secondary/50 select-none md:justify-self-start">
-    © {currentYear} Writings for Developers. All Rights Reserved.
+  © {currentYear} Vertex Digital. All Rights Reserved.
   </div>
 
  

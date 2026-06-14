@@ -110,7 +110,7 @@ export default function Hero() {
             </motion.span>
           </div>
 
-          {/* Hero Image */}
+         
           <div
             className="
               w-full

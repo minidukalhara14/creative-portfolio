@@ -24,8 +24,10 @@ export default function AboutMePage() {
         </div>
 
         <div className="w-full max-w-[90%] md:w-[400px] h-auto md:h-[200px] flex items-center flex-col absolute bottom-10 md:bottom-0 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 z-50 text-center md:text-left px-4 md:px-0">
-          <span className="text-lg md:text-xl mt-5 font-medium tracking-wider text-secondary">
-            As a designer, I help companies <br /> to achieve their desired goals.
+          <span className="text-lg md:text-lg text-center mt-2 font-medium tracking-wider lg:p-1.5 text-secondary">
+           As a mechanical engineer, <br />
+           I help companies design machines and products
+            that work in the real world.
           </span>
 
           <div className="p-6 md:p-4 mt-6 md:mt-[20px] h-[10px] border border-gray-300 cursor-pointer rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center">

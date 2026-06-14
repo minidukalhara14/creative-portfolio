@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useState } from "react";
 import { useEffect } from "react";
 import { client } from "../../sanityClient";
+import { IoMdStar } from "react-icons/io";
 
 export default function AboutMeCard() {
   const [experiences, setExperiences] = useState([]);
@@ -57,10 +58,12 @@ export default function AboutMeCard() {
           
           <div className="w-full max-w-[90%] md:w-[700px] h-auto md:h-[200px] flex flex-col mt-[80px] md:mt-[50px] items-center justify-center px-4">
              <span className="text-lg md:text-xl text-center leading-relaxed">
-              I have worked with businesses of all sizes <br className="hidden md:inline"/>
-              to create stunning websites and designs <br className="hidden md:inline"/>
-              that capture their brand's identity.
-             </span>
+                I have worked with clients across the US, EU, and Asia
+                <br className="hidden md:inline" />
+                to deliver precision-engineered designs that go straight
+                <br className="hidden md:inline" />
+                to manufacturing — no rework, no guesswork.
+              </span>
           </div>
 
           <div className="p-4 mt-[20px] md:mt-[10px] h-[10px] border border-gray-300 rounded-full flex justify-center items-center">
@@ -70,79 +73,97 @@ export default function AboutMeCard() {
           </div>
 
          
-          <div className="w-full flex justify-center items-center mt-[60px] md:mt-[100px] px-4 overflow-hidden">
-              <motion.span
-                  initial={{ y: "100%", opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }} 
-                  viewport={{ once: true, amount: 0 }} 
-                  transition={{
-                      duration: 1.2,
-                      ease: [0.76, 0, 0.24, 1], 
-                      delay: 0.2, 
-                  }}
-                  className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.10em] md:tracking-[0.15em] text-primary leading-none select-none text-center"
-              >
-                  My Story
-              </motion.span>
-          </div>
+        <div className="w-full flex justify-center items-center mt-[60px] md:mt-[100px] px-4 relative overflow-hidden">
+  <motion.span
+    initial={{ y: "100%", opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    viewport={{ once: true, amount: 0 }}
+    transition={{
+      duration: 1.2,
+      ease: [0.76, 0, 0.24, 1],
+      delay: 0.2,
+    }}
+    className="relative z-10 block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.10em] md:tracking-[0.15em] text-primary leading-none select-none text-center"
+  >
+    My Story
+  </motion.span>
+
+  {/* Bottom mask */}
+  <div className="absolute bottom-0 z-20 w-full md:w-[calc(100vw-70px)] h-[35px] bg-secondary"></div>
+</div>
 
          
-          <div className="w-full md:w-[calc(100vw-70px)] absolute bottom-0 h-[35px] bg-secondary rounded-b-2xl"></div>
+        
           
-          
-          <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-24">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
-                  
-                 
-                  <div className="w-full aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-800 shadow-xl">
-                    <img 
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=cover"
-                        alt="My Story Graphic" 
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
-                    />
-                  </div>
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-24">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
 
-                 
-                  <div className="flex flex-col justify-center text-left">
-                    <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400 mb-4 block">
-                        Who I Am
-                    </span>
-                    
-                    <h3 className="text-2xl md:text-4xl font-bold uppercase tracking-wide text-black mb-6 leading-tight">
-                        Driven by Passion, <br /> Defined by Design
-                    </h3>
-                    
-                    <div className="space-y-4 text-zinc-400 font-sans text-sm md:text-lg leading-relaxed font-light">
-                        <p>
-                        I am a multidisciplinary designer and developer focused on creating premium digital 
-                        experiences. Over the past few years, I’ve helped startups and established brands 
-                        turn complex problems into beautiful, intuitive, and conversion-driven solutions.
-                        </p>
-                        <p>
-                        My approach blends strategy with aesthetics, ensuring that every pixel serves a 
-                        purpose. I believe that great design is not just how it looks, but how effectively 
-                        it tells a story and connects with people.
-                        </p>
-                    </div>
+    {/* Image Section */}
+    <div className="w-full max-w-[380px] md:max-w-[420px] aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-800 shadow-xl mx-auto">
+      <img
+        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=cover"
+        alt="My Story Graphic"
+        className="w-full h-full object-cover grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-700 ease-in-out"
+      />
+    </div>
 
-                  
-                    <div className="mt-8 pt-6 border-t border-zinc-800/50 flex gap-8">
-                        <div>
-                          <h5 className="text-xl md:text-2xl font-bold text-black font-mono">5+</h5>
-                          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">Years Experience</p>
-                        </div>
-                        <div>
-                          <h5 className="text-xl md:text-2xl font-bold text-black font-mono">50+</h5>
-                          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">Projects Delivered</p>
-                        </div>
-                    </div>
-                  </div>
+    {/* Information Section */}
+    <div className="flex flex-col justify-center text-left">
+      <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 mb-4 block">
+        Who I Am
+      </span>
 
-              </div>
-          </div>
+      <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-black mb-6 leading-tight">
+        ENGINEERED FOR PRECISION, BUILT FOR RESULTS
+      </h3>
 
+      <div className="space-y-4 text-zinc-400 font-sans text-sm md:text-lg leading-relaxed font-light">
+        <p>
+          I'm Ishara Deshapriya — a mechanical engineer and full-time freelance
+          designer based in Sri Lanka, specializing in industrial machine design
+          and consumer product development using SolidWorks. My approach is
+          straightforward: understand the engineering problem first, then design
+          the cleanest, most manufacturable solution possible. Every model I
+          deliver is production-ready — complete drawings, accurate tolerances,
+          zero ambiguity for your manufacturing team.
+        </p>
+      </div>
+
+      {/* Stats */}
+      <div className="mt-8 pt-6 border-t border-zinc-800/50 flex gap-8">
+        <div>
+          <h5 className="text-xl md:text-2xl font-bold text-black font-mono">
+            10+
+          </h5>
+          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">
+            Years Experience
+          </p>
+        </div>
+
+        <div>
+          <h5 className="text-xl md:text-2xl font-bold text-black font-mono">
+            100+
+          </h5>
+          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">
+            Projects Delivered
+          </p>
+        </div>
+
+        <div>
+          <h5 className="text-xl md:text-2xl font-bold text-black font-mono inline-flex items-center gap-1">
+            4.9 <IoMdStar />
+          </h5>
+          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">
+            Client Ratings
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
          
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 sticky top-0 bg-transparent pb-4 z-10 block text-center w-full px-4">
+          <span className="text-sm lg:text-lg font-mono uppercase tracking-[0.3em] text-primary sticky top-0 bg-transparent pb-4 z-10 block text-center w-full px-4">
             My Journey & Experience
           </span>
             
