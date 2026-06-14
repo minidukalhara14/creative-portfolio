@@ -26,15 +26,11 @@ export default function Intro() {
                     </div>
               </div>
 
-                <div className="w-full max-w-full md:w-[700px] min-h-[150px] md:h-[200px] flex flex-col mt-[120px] md:mt-[150px] items-center px-4 md:px-0">
-                    <span className="text-[24px] sm:text-[34px] md:text-[48px] leading-[32px] sm:leading-[40px] md:leading-[46px] font-medium tracking-normal text-center block">
-                        With years of experience in the
-                    </span>
-                    <span className="text-[24px] sm:text-[34px] md:text-[48px] leading-[32px] sm:leading-[40px] md:leading-[46px] font-medium tracking-normal text-center block">
-                        industry, I have worked with
-                    </span>
-                    <span className="text-[24px] sm:text-[34px] md:text-[48px] leading-[32px] sm:leading-[40px] md:leading-[46px] font-medium tracking-normal text-center block">
-                        businesses of all sizes. 
+                <div className="w-full max-w-[900px] min-h-[150px] mt-[100px] md:mt-[140px] mx-auto px-4">
+                    <span className="text-[22px] sm:text-[30px] md:text-[42px] leading-[1.4] font-medium text-center block">
+                        With over a decade of experience in mechanical engineering,
+                        I design machines and products that are built to perform —
+                        and built to last.
                     </span>
                 </div>
 
