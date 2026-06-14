@@ -10,7 +10,7 @@ export default function Intro() {
         <div className="w-full md:w-[calc(100vw-70px)] rounded-2xl text-primary flex justify-center items-center relative px-4 md:px-0">
             
            
-            <div id="intro" className="w-full  lg:h-[calc(100vh+30px)] absolute -top-[80px] bg-secondary flex items-center flex-col rounded-2xl relative pb-12 md:pb-0">
+            <div id="intro" className="w-full lg:h-[calc(100vh+30px)] absolute -top-[80px] bg-secondary flex items-center flex-col rounded-2xl relative pb-12 md:pb-0">
               
              
               <div className="absolute -top-[34px] w-[160px] sm:w-[200px] h-[35px] text-white flex items-center justify-center">
@@ -27,7 +27,7 @@ export default function Intro() {
               </div>
 
                 <div className="w-full max-w-[700px] min-h-[150px] mt-[80px] md:mt-[120px] mx-auto px-4 ">
-                    <span className="text-[25px] sm:text-[25px] md:text-[25px] leading-[1.4] font-medium text-center block">
+                    <span className="text-[20px] sm:text-[25px] md:text-[25px] leading-[1.4] font-medium text-center block">
                         With over a decade of experience in mechanical engineering,
                         I design machines and products that are built to perform —
                         and built to last.
@@ -59,7 +59,7 @@ export default function Intro() {
                 </div>
 
                
-                <div className="w-full md:w-[calc(100vw-70px)] absolute bottom-0 h-[125px] bg-secondary rounded-b-2xl">
+                <div className="hidden lg:flex w-full md:w-[calc(100vw-70px)] absolute bottom-0 h-[125px] bg-secondary rounded-b-2xl">
                    
                 </div>
                 
