@@ -12,12 +12,11 @@ export default function Hero() {
 
       <div className="w-full min-h-screen md:h-screen flex justify-center items-center flex-col overflow-hidden select-none relative">
 
-        {/* Navbar */}
         <div className="w-full h-[70px] md:h-[80px] flex justify-center items-center absolute top-0 z-50">
           <Navibar />
         </div>
 
-        {/* Hero Content */}
+        
         <div
           className="
             w-full
@@ -39,7 +38,7 @@ export default function Hero() {
           "
         >
 
-          {/* First Name */}
+          
           <div
             className="
               mt-0
@@ -74,7 +73,7 @@ export default function Hero() {
             </motion.span>
           </div>
 
-          {/* Last Name */}
+         
           <div
             className="
               font-semibold
@@ -131,7 +130,7 @@ export default function Hero() {
 
       </div>
 
-      {/* Intro / Scroll Button */}
+     
       <div
         className="
           w-full
@@ -147,15 +146,14 @@ export default function Hero() {
         <Intro />
       </div>
 
-      {/* Animated Table */}
+      
       <div className="w-full relative z-20">
         <AnimatedTable />
       </div>
 
-      {/* Services */}
       <Services />
 
-      {/* Footer */}
+     
       <Footer />
 
     </div>
