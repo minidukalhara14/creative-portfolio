@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <div className="w-full bg-black text-white relative flex justify-center items-center flex-col overflow-x-hidden">
 
-      <div className="w-full min-h-screen md:h-screen flex justify-center items-center flex-col overflow-hidden select-none relative">
+      <div className="w-full h-[700px] lg:min-h-screen  flex justify-center items-center flex-col overflow-hidden select-none relative">
 
         <div className="w-full h-[70px] md:h-[80px] flex justify-center items-center absolute top-0 z-50">
           <Navibar />
