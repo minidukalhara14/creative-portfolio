@@ -19,7 +19,7 @@ export default function AnimatedTable() {
       })
       .catch((err) => {
         console.error("Sanity fetch error in table:", err);
-        setLoading(false);
+        loading(false);
       });
   }, []);
 
@@ -30,7 +30,6 @@ export default function AnimatedTable() {
   return (
     <div className="w-full min-h-screen text-white flex flex-col justify-center items-center">
       <div className="w-full max-w-6xl flex justify-center items-center flex-col mx-auto mb-8 md:mb-16 px-6 py-12 text-center">
-       
         <h1 className="text-2xl md:text-xl mb-10 md:mb-15 font-medium tracking-tight text-white leading-tight max-w-4xl select-none">
           I work with manufacturers, startups, and product companies worldwide
           <br className="hidden md:inline" />
@@ -43,12 +42,12 @@ export default function AnimatedTable() {
         </Link>
       </div>
 
-     
-      <Link to="/projects" className="w-[90%] md:w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
+      {/* මචන්, මෙතන තිබ්බ පොදු <Link> එක අයින් කරලා සාමාන්‍ය div එකක් කරා */}
+      <div className="w-[90%] md:w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
         {projects.map((row) => (
           <TableRow key={row._id} row={row} />
         ))}
-      </Link>
+      </div>
     </div>
   );
 }
@@ -102,33 +101,30 @@ function TableRow({ row }) {
   };
 
   return (
-    <div
+    /* මචන්, හැම row එකක්ම දැන් dynamic ලින්ක් එකකින් wrap කරා. 
+       App.jsx එකේ තියෙන්නේ `/projects/:id` හින්දා මෙතනටත් ඒ path එකම දුන්නා */
+    <Link
+      to={`/projects/${row._id}`}
       ref={ref}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      
-      className="relative grid grid-cols-1 md:grid-cols-3 items-start md:items-center py-6 md:py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d] gap-2 md:gap-0"
+      className="relative grid grid-cols-1 md:grid-cols-3 items-start md:items-center py-6 md:py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d] gap-2 md:gap-0 block"
     >
-      
-     
       <div className="pointer-events-none text-left">
         <h2 className="text-3xl md:text-5xl font-medium text-secondary tracking-tight group-hover:translate-x-0 md:group-hover:translate-x-3 transition-transform duration-300 ease-out">
           {row.title}
         </h2>
       </div>
 
-      
       <div className="pointer-events-none flex justify-start md:justify-center py-1 rounded"> 
         <span className="text-sm md:text-lg max-w-xs text-center truncate opacity-60 md:opacity-100">
           <AnimatedButton text={row.projectType || "Development"} className="text-secondary uppercase" /> 
         </span>
       </div>
 
-      
       <div className="pointer-events-none hidden md:block"></div>
 
-      
       <motion.div
         style={{
           rotateX: rotateX,
@@ -158,6 +154,6 @@ function TableRow({ row }) {
           />
         )}
       </motion.div>
-    </div>
+    </Link>
   );
 }

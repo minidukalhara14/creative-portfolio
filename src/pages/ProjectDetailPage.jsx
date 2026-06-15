@@ -52,15 +52,14 @@ export default function ProjectDetailPage() {
     const { title, projectType, images, description, projectUrl } = project;
 
     return (
-        
         <div className="min-h-screen w-full flex flex-col bg-primary text-secondary items-center overflow-x-hidden">
             
-          
+            {/* Navigation Bar */}
             <div className="w-full h-[80px] flex justify-center items-center z-50">
                 <Navibar />
             </div>
 
-            
+            {/* Header Section */}
             <div className="w-[calc(100vw-70px)] py-20 flex flex-col justify-center items-center select-none text-center">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -68,22 +67,22 @@ export default function ProjectDetailPage() {
                     transition={{ duration: 0.6 }}
                     className="px-4"
                 >
-                    <h1 className="text-5xl font-bold uppercase tracking-wider">
+                    <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wider max-w-5xl leading-tight">
                         {title}
                     </h1>
                 </motion.div>
                 
-              
-                <span className="text-sm max-w-[700px] w-full font-mono uppercase mt-8 text-zinc-400 tracking-wider block px-4 leading-relaxed text-center mx-auto">
-                    {description || 'Web Development'}
+                {/* මෙතනට projectType එක දැම්මා subtitle එක විදිහට */}
+                <span className="text-sm font-mono uppercase mt-6 text-zinc-500 tracking-[0.3em] block px-4">
+                    {projectType || 'Mechanical Engineering'}
                 </span>
             </div>
 
-            
+            {/* Detailed Content Card */}
             <div className="w-[calc(100vw-30px)] lg:w-[calc(100vw-70px)] rounded-2xl text-primary flex justify-center items-center relative mb-24">
                 <div id="intro" className="w-full h-auto min-h-[500px] bg-secondary flex items-center flex-col rounded-2xl relative p-8 md:p-16">
                     
-                   
+                    {/* Floating Scroll Button Container */}
                     <div className="absolute -top-[34px] w-[200px] h-[35px] text-white flex items-center justify-center ">
                         <svg
                             viewBox="0 0 200 50"
@@ -97,48 +96,64 @@ export default function ProjectDetailPage() {
                         </div>
                     </div>
 
-                   
-                    <div className="w-full h-[100px] border-b border-zinc-700/30 flex flex-row items-center justify-between gap-10">
-                        <span className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-500">
-                            {projectType || 'General'}
+                    {/* Metadata Header */}
+                    <div className="w-full max-w-[800px] h-[80px] border-b border-zinc-700/20 flex flex-row items-center justify-between gap-10">
+                        <span className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500 font-bold">
+                            Project Specifications
                         </span>
-                        {project.projectUrl && (
+                        {projectUrl && (
                             <a 
-                                href={project.projectUrl} 
+                                href={projectUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-500 hover:text-primary transition-all duration-300"
+                                className="text-sm font-mono uppercase tracking-[0.2em] text-zinc-600 hover:text-black font-semibold transition-all duration-300 border border-zinc-700/20 px-4 py-1.5 rounded-full hover:bg-zinc-100"
                             >
-                                View Live
+                                View Case Study
                             </a>
                         )}
                     </div>
 
-                    
-                    <div className="w-full max-w-[800px] flex flex-col gap-6 mt-8">
+                    {/* Project Description Text Area */}
+                    {description && (
+                        <div className="w-full max-w-[800px] mt-10 text-left">
+                            <p className="text-lg md:text-xl font-normal text-zinc-800 leading-relaxed font-sans whitespace-pre-line">
+                                {description}
+                            </p>
+                        </div>
+                    )}
+
+                    {/* Image Showcase Gallery */}
+                    <div className="w-full max-w-[800px] flex flex-col gap-8 mt-12">
                         {images && images.length > 0 ? (
                             images.map((img, index) => (
-                                <div key={index} className="w-full aspect-[4/3] bg-sky-800/10 rounded-2xl p-4 md:p-8">
-                                    <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl">
+                                <div key={index} className="w-full h-auto bg-zinc-900/[0.03] rounded-2xl p-2 md:p-4 border border-zinc-900/[0.05]">
+                                    <div className="w-full h-full rounded-xl overflow-hidden shadow-xl">
                                         <img 
                                             src={urlFor(img).url()} 
-                                            alt={`${title} - ${index + 1}`} 
-                                            className="w-full h-full object-cover"
+                                            alt={`${title} Showcase - ${index + 1}`} 
+                                            className="w-full h-full object-cover select-none"
                                         />
                                     </div>
                                 </div>
                             ))
                         ) : (
-                            <div className="w-full aspect-[4/3] bg-zinc-800 text-zinc-400 flex items-center justify-center rounded-2xl">
-                                No Image Available
+                            <div className="w-full aspect-[16/9] bg-zinc-100 text-zinc-400 flex items-center justify-center rounded-2xl border border-dashed border-zinc-300 font-mono text-sm">
+                                No Technical Renders Available
                             </div>
                         )}
+                    </div>
+
+                    {/* Back to Project Page Button */}
+                    <div className="mt-16">
+                        <Link to="/projects">
+                            <AnimatedButton text="← Back To Projects" className="text-xs uppercase font-mono tracking-widest text-zinc-600" />
+                        </Link>
                     </div>
 
                 </div>
             </div>
 
-           
+            {/* Footer */}
             <div className="w-full mt-auto">
                 <Footer />
             </div>
