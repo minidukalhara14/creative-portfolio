@@ -3,18 +3,38 @@ import ScrollButton from "../common/ScrollButton";
 import AnimatedButton from "../common/AnimatedButton";
 import { motion } from 'framer-motion';
 import ServicesSection from "../common/ServicesSection";
-import { RectangleVertical } from "lucide-react";
 import ReviewSlider from "../common/ReviewSlider";
+import { useState } from "react";
 
 
 export default function Services() {
+    const [activeFaqIndex, setActiveFaqIndex] = useState(null);
+
+    const faqs = [
+        {
+            question: "What types of projects do you take on?",
+            answer: "I work on mechanical engineering, product development, machine design, and production-ready concepts that need a practical path from idea to execution.",
+        },
+        {
+            question: "How do you handle project timelines?",
+            answer: "Each project is scoped based on complexity, deliverables, and revision cycles so the process stays predictable and aligned with the final goal.",
+        },
+        {
+            question: "Can you support both concept and final design stages?",
+            answer: "Yes. I can help at the early concept stage, refine the design, and prepare it for manufacturing or production-ready handoff.",
+        },
+    ];
+
+    const toggleFaq = (index) => {
+        setActiveFaqIndex((currentIndex) => (currentIndex === index ? null : index));
+    };
 
      return (
        
         <div className="w-full px-4 md:px-0 md:w-[calc(100vw-70px)] mt-[100px] rounded-2xl text-primary flex justify-center items-center">
             
            
-            <div id="services" className="w-full min-h-screen bg-secondary flex items-center flex-col rounded-2xl relative pb-10 md:pb-0">
+            <div id="services" className="w-full min-h-screen bg-secondary flex items-center flex-col rounded-2xl relative pb-16 md:pb-20">
               
                
                 <div className="absolute -top-[34px] w-[200px] h-[35px] text-white flex items-center justify-center">
@@ -72,8 +92,75 @@ export default function Services() {
                 <div className="w-full mt-10 md:mt-0">
                     <ServicesSection />
                 </div>
-                
-            <ReviewSlider/>
+
+                <div className="w-full mt-12 md:mt-16 flex flex-col gap-8 md:gap-10">
+                    <ReviewSlider />
+
+                    <div className="w-full max-w-4xl mx-auto px-4 md:px-0">
+                        <div className="flex items-end justify-between gap-4 flex-wrap">
+                            <h2 className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center md:text-left">
+                                QUESTIONS
+                            </h2>
+                            <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary/30 select-none">
+                                FAQ
+                            </span>
+                        </div>
+
+                        <div className="mt-6 rounded-2xl bg-white shadow-2xl overflow-hidden border border-black/5">
+                            {faqs.map((faq, index) => {
+                                const isOpen = activeFaqIndex === index;
+                                const number = String(index + 1).padStart(3, "0");
+
+                                return (
+                                    <div
+                                        key={faq.question}
+                                        className="border-b border-black/10 last:border-b-0"
+                                    >
+                                        <button
+                                            type="button"
+                                            onClick={() => toggleFaq(index)}
+                                            className="w-full flex items-center justify-between gap-4 px-4 sm:px-6 md:px-8 py-5 md:py-6 text-left cursor-pointer"
+                                        >
+                                            <div className="flex items-center gap-4 md:gap-6 min-w-0">
+                                                <span className="text-xs md:text-sm font-medium tracking-[0.28em] text-black/35 select-none shrink-0">
+                                                    {number}
+                                                </span>
+                                                <span className="text-base sm:text-lg md:text-xl font-medium text-black leading-tight select-none">
+                                                    {faq.question}
+                                                </span>
+                                            </div>
+
+                                            <motion.span
+                                                animate={{ rotate: isOpen ? 45 : 0 }}
+                                                transition={{ duration: 0.25, ease: "easeInOut" }}
+                                                className="relative flex h-5 w-5 shrink-0 items-center justify-center text-black"
+                                                aria-hidden="true"
+                                            >
+                                                <span className="absolute h-px w-4 bg-current" />
+                                                <span className="absolute h-4 w-px bg-current" />
+                                            </motion.span>
+                                        </button>
+
+                                        <motion.div
+                                            initial={false}
+                                            animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                                            transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="px-4 sm:px-6 md:px-8 pb-5 md:pb-6">
+                                                <div className="rounded-xl md:rounded-2xl bg-zinc-950 border border-white/5 px-4 sm:px-5 md:px-6 py-4 md:py-5 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+                                                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/90 max-w-3xl">
+                                                        {faq.answer}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
         
             </div>
             
