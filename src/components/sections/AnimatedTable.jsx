@@ -19,7 +19,7 @@ export default function AnimatedTable() {
       })
       .catch((err) => {
         console.error("Sanity fetch error in table:", err);
-        loading(false);
+        setLoading(false);
       });
   }, []);
 
@@ -42,7 +42,6 @@ export default function AnimatedTable() {
         </Link>
       </div>
 
-      {/* මචන්, මෙතන තිබ්බ පොදු <Link> එක අයින් කරලා සාමාන්‍ය div එකක් කරා */}
       <div className="w-[90%] md:w-[calc(100vw-70px)] max-w-6xl mx-auto border-t border-white/10">
         {projects.map((row) => (
           <TableRow key={row._id} row={row} />
@@ -101,30 +100,44 @@ function TableRow({ row }) {
   };
 
   return (
-    /* මචන්, හැම row එකක්ම දැන් dynamic ලින්ක් එකකින් wrap කරා. 
-       App.jsx එකේ තියෙන්නේ `/projects/:id` හින්දා මෙතනටත් ඒ path එකම දුන්නා */
     <Link
       to={`/projects/${row._id}`}
       ref={ref}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="relative grid grid-cols-1 md:grid-cols-3 items-start md:items-center py-6 md:py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d] gap-2 md:gap-0 block"
+      /* මෙතන flex flex-col md:grid md:grid-cols-3 දැම්මා. එතකොට desktop එකේදී original grid එකම වෙනස් නොවී වැඩ කරනවා */
+      className="relative flex flex-col md:grid md:grid-cols-3 items-start md:items-center py-6 md:py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d] gap-4 md:gap-0 block"
     >
-      <div className="pointer-events-none text-left">
+      {/* 1. Mobile Only Image: මොබයිල් එකේදී විතරක් ලැයිස්තුවේ මුලටම (උඩටම) පේන්න හදපු කොටස */}
+      {row.images && row.images[0] && (
+        <div className="block md:hidden w-full h-[220px] overflow-hidden rounded-xl border border-white/10 select-none">
+          <img
+            src={urlFor(row.images[0]).url()} 
+            alt={row.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+      {/* 2. Project Title: Desktop එකේ 1st column එක */}
+      <div className="pointer-events-none text-left w-full">
         <h2 className="text-3xl md:text-5xl font-medium text-secondary tracking-tight group-hover:translate-x-0 md:group-hover:translate-x-3 transition-transform duration-300 ease-out">
           {row.title}
         </h2>
       </div>
 
-      <div className="pointer-events-none flex justify-start md:justify-center py-1 rounded"> 
+      {/* 3. Project Type: Desktop එකේ 2nd column එක */}
+      <div className="pointer-events-none flex justify-start md:justify-center py-1 rounded w-full"> 
         <span className="text-sm md:text-lg max-w-xs text-center truncate opacity-60 md:opacity-100">
           <AnimatedButton text={row.projectType || "Development"} className="text-secondary uppercase" /> 
         </span>
       </div>
 
+      {/* 4. Desktop Empty Space: Desktop එකේ 3rd column එක (මුල් කේතයේ තිබූ පරිදිම) */}
       <div className="pointer-events-none hidden md:block"></div>
 
+      {/* Desktop 3D Hover Image Effect: ඔයාගේ ඔරිජිනල් 3D හෝවර් ඉෆෙක්ට් එක ඒ විදිහටම තියෙනවා */}
       <motion.div
         style={{
           rotateX: rotateX,
