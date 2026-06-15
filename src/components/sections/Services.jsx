@@ -96,7 +96,7 @@ export default function Services() {
                 <div className="w-full mt-12 md:mt-16 flex flex-col gap-8 md:gap-10">
                     <ReviewSlider />
 
-                   <div className="w-full flex flex-col justify-center items-center  mt-[10px] overflow-hidden px-4"> 
+                   <div className="w-full flex flex-col justify-center items-center mt-[10px] overflow-hidden px-0 md:px-4"> 
                        
                         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4">
                             <motion.span
@@ -108,13 +108,13 @@ export default function Services() {
                                 ease: [0.76, 0, 0.24, 1], 
                                 delay: 0.2, 
                             }}
-                            className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center"
+                            className="block text-2xl sm:text-3xl md:text-5xl font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center"
                         >
                             Questions
                         </motion.span> 
                             
                         </div>
-                        <div className="w-full max-w-4xl mx-auto px-4 md:px-0 text-center">
+                        <div className="w-full max-w-4xl mx-auto px-0 md:px-0 text-center">
                             
                             <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary/30 select-none">
                                     FAQ
