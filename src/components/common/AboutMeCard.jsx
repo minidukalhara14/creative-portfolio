@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { client } from "../../sanityClient";
 import { IoMdStar } from "react-icons/io";
+import IsharaProfile from "../../assets/IsharaProfile.jpg";
 
 export default function AboutMeCard() {
   const [experiences, setExperiences] = useState([]);
@@ -101,7 +102,7 @@ export default function AboutMeCard() {
     {/* Image Section */}
     <div className="w-full max-w-[380px] md:max-w-[420px] aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-800 shadow-xl mx-auto">
       <img
-        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=cover"
+        src={IsharaProfile}
         alt="My Story Graphic"
         className="w-full h-full object-cover grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-700 ease-in-out"
       />
