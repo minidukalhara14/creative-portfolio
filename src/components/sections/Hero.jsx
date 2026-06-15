@@ -20,12 +20,9 @@ export default function Hero() {
         <div
           className="
             w-full
-            min-h-screen
-            md:h-[calc(100vh-105px)]
-            pt-[70px]
-            md:pt-[120px]
-            pb-[100px]
-            md:pb-10
+            lg:-mt-[70px]
+            pb-[50px] 
+            md:pb-5
             px-3
             sm:px-4
             md:p-10
@@ -120,7 +117,7 @@ export default function Hero() {
               mt-6
               sm:mt-6
               md:mt-0
-              lg:mt-4
+              lg:mt-1
             "
           >
             <HeroImage />
@@ -138,7 +135,7 @@ export default function Hero() {
           justify-center
           items-center
           mt-6
-          md:mt-[40px]
+          md:mt-0
           relative
           z-20
         "
