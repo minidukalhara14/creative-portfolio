@@ -1,10 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 import AnimatedButton from "./AnimatedButton";
 
 export default function Navibar() {
   
   const [isOpen, setIsOpen] = useState(false);
+
+  const mobileMenuItems = [
+    { to: "/about", label: "ABOUT", reloadDocument: false },
+    { to: "/projects", label: "WORK", reloadDocument: false },
+    { to: "/contact", label: "CONTACT", reloadDocument: true },
+    { to: "/", label: "CLONE ME", reloadDocument: false },
+  ];
 
   return (
     
@@ -48,25 +57,34 @@ export default function Navibar() {
         </button>
 
         
-        {isOpen && (
-          <div className="absolute top-[80px] left-0 w-full bg-black/95 border border-slate-800 rounded-2xl p-6 flex flex-col items-center gap-5 md:hidden shadow-2xl backdrop-blur-md">
-            <div className="w-full text-center p-3 border border-solid border-slate-700 rounded-full bg-transparent flex justify-center items-center">
-                <Link to="/about" onClick={() => setIsOpen(false)} className="w-full">
-                  <AnimatedButton text="ABOUT" className="font-sans text-[14px] text-secondary tracking-normal uppercase" />
-                </Link>
-            </div>
-            <div className="w-full text-center p-3 border border-solid border-slate-700 rounded-full bg-transparent flex justify-center items-center">
-                <Link to="/projects" onClick={() => setIsOpen(false)} className="w-full">
-                  <AnimatedButton text="WORK" className="font-sans text-[14px] text-secondary tracking-normal uppercase" />
-                </Link>
-            </div>
-            <div className="w-full text-center p-3 border border-solid border-slate-700 rounded-full bg-transparent flex justify-center items-center">
-                <Link to="/contact" reloadDocument onClick={() => setIsOpen(false)} className="w-full">
-                  <AnimatedButton text="CONTACT" className="font-sans text-[14px] text-secondary tracking-normal uppercase" />
-                </Link>
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -12, scaleY: 0.98 }}
+              animate={{ opacity: 1, y: 0, scaleY: 1 }}
+              exit={{ opacity: 0, y: -12, scaleY: 0.98 }}
+              transition={{ duration: 0.28, ease: [0.25, 1, 0.5, 1] }}
+              className="absolute top-[80px] left-0 w-full origin-top overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl md:hidden"
+            >
+              <div className="flex flex-col divide-y divide-black/10">
+                {mobileMenuItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    reloadDocument={item.reloadDocument}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-between px-5 py-5 text-black hover:bg-black/[0.03] transition-colors duration-200"
+                  >
+                    <span className="text-base font-semibold uppercase tracking-[0.18em] text-black">
+                      {item.label}
+                    </span>
+                    <ChevronRight className="h-4 w-4 text-black/60" strokeWidth={2.25} />
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
             
     </div>
   );
