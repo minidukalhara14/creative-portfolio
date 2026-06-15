@@ -97,8 +97,8 @@ export default function Services() {
                     <ReviewSlider />
 
                     <div className="w-full max-w-4xl mx-auto px-4 md:px-0">
-                        <div className="flex items-end justify-between gap-4 flex-wrap">
-                            <h2 className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center md:text-left">
+                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4">
+                            <h2 className="block w-full md:w-auto text-center md:text-left text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none">
                                 QUESTIONS
                             </h2>
                             <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary/30 select-none">
