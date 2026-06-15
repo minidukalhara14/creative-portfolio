@@ -130,12 +130,11 @@ export default function Hero() {
      
       <div
         className="
-          w-full
           flex
           justify-center
           items-center
           mt-6
-          md:mt-0
+          lg:mt-0
           relative
           z-20
         "
