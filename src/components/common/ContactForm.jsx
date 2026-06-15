@@ -29,8 +29,9 @@ export default function ContactForm() {
       'znLTpiEJquXNkGvd7'  // Public Key
     )
     .then(() => {
-        toast.success(`Thank you ${formData.firstName}! Sent successfully.`, { position: 'top-right' });
+        
         setFormData({ firstName: '', lastName: '', email: '', message: '' });
+       toast.success(`Thank you ${formData.firstName}! Sent successfully.`, { position: 'top-right' });
         formRef.current.reset(); // Form එක reset කරන්න
     })
     .catch((error) => {
