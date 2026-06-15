@@ -96,68 +96,83 @@ export default function Services() {
                 <div className="w-full mt-12 md:mt-16 flex flex-col gap-8 md:gap-10">
                     <ReviewSlider />
 
-                    <div className="w-full max-w-4xl mx-auto px-4 md:px-0">
+                   <div className="w-full flex flex-col justify-center items-center  mt-[10px] overflow-hidden px-4"> 
+                       
                         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4">
-                            <h2 className="block w-full md:w-auto text-center md:text-left text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none">
-                                QUESTIONS
-                            </h2>
-                            <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary/30 select-none">
-                                FAQ
-                            </span>
+                            <motion.span
+                            initial={{ y: "100%", opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }} 
+                            viewport={{ once: true, amount: 0 }} 
+                            transition={{
+                                duration: 1.2,
+                                ease: [0.76, 0, 0.24, 1], 
+                                delay: 0.2, 
+                            }}
+                            className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center"
+                        >
+                            Questions
+                        </motion.span> 
+                            
                         </div>
+                        <div className="w-full max-w-4xl mx-auto px-4 md:px-0 text-center">
+                            
+                            <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary/30 select-none">
+                                    FAQ
+                                </span>
 
-                        <div className="mt-6 rounded-2xl bg-white shadow-2xl overflow-hidden border border-black/5">
-                            {faqs.map((faq, index) => {
-                                const isOpen = activeFaqIndex === index;
-                                const number = String(index + 1).padStart(3, "0");
+                            <div className="mt-6 rounded-2xl bg-white shadow-2xl overflow-hidden border border-black/5">
+                                {faqs.map((faq, index) => {
+                                    const isOpen = activeFaqIndex === index;
+                                    const number = String(index + 1).padStart(3, "0");
 
-                                return (
-                                    <div
-                                        key={faq.question}
-                                        className="border-b border-black/10 last:border-b-0"
-                                    >
-                                        <button
-                                            type="button"
-                                            onClick={() => toggleFaq(index)}
-                                            className="w-full flex items-center justify-between gap-4 px-4 sm:px-6 md:px-8 py-5 md:py-6 text-left cursor-pointer"
+                                    return (
+                                        <div
+                                            key={faq.question}
+                                            className="border-b border-black/10 last:border-b-0"
                                         >
-                                            <div className="flex items-center gap-4 md:gap-6 min-w-0">
-                                                <span className="text-xs md:text-sm font-medium tracking-[0.28em] text-black/35 select-none shrink-0">
-                                                    {number}
-                                                </span>
-                                                <span className="text-base sm:text-lg md:text-xl font-medium text-black leading-tight select-none">
-                                                    {faq.question}
-                                                </span>
-                                            </div>
-
-                                            <motion.span
-                                                animate={{ rotate: isOpen ? 45 : 0 }}
-                                                transition={{ duration: 0.25, ease: "easeInOut" }}
-                                                className="relative flex h-5 w-5 shrink-0 items-center justify-center text-black"
-                                                aria-hidden="true"
+                                            <button
+                                                type="button"
+                                                onClick={() => toggleFaq(index)}
+                                                className="w-full flex items-center justify-between gap-4 px-4 sm:px-6 md:px-8 py-5 md:py-6 text-left cursor-pointer"
                                             >
-                                                <span className="absolute h-px w-4 bg-current" />
-                                                <span className="absolute h-4 w-px bg-current" />
-                                            </motion.span>
-                                        </button>
-
-                                        <motion.div
-                                            initial={false}
-                                            animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-                                            transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-                                            className="overflow-hidden"
-                                        >
-                                            <div className="px-4 sm:px-6 md:px-8 pb-5 md:pb-6">
-                                                <div className="rounded-xl md:rounded-2xl bg-zinc-950 border border-white/5 px-4 sm:px-5 md:px-6 py-4 md:py-5 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
-                                                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/90 max-w-3xl">
-                                                        {faq.answer}
-                                                    </p>
+                                                <div className="flex items-center gap-4 md:gap-6 min-w-0">
+                                                    <span className="text-xs md:text-sm font-medium tracking-[0.28em] text-black/35 select-none shrink-0">
+                                                        {number}
+                                                    </span>
+                                                    <span className="text-base sm:text-lg md:text-xl font-medium text-black leading-tight select-none">
+                                                        {faq.question}
+                                                    </span>
                                                 </div>
-                                            </div>
-                                        </motion.div>
-                                    </div>
-                                );
-                            })}
+
+                                                <motion.span
+                                                    animate={{ rotate: isOpen ? 45 : 0 }}
+                                                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                                                    className="relative flex h-5 w-5 shrink-0 items-center justify-center text-black"
+                                                    aria-hidden="true"
+                                                >
+                                                    <span className="absolute h-px w-4 bg-current" />
+                                                    <span className="absolute h-4 w-px bg-current" />
+                                                </motion.span>
+                                            </button>
+
+                                            <motion.div
+                                                initial={false}
+                                                animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                                                transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                                                className="overflow-hidden"
+                                            >
+                                                <div className="px-4 sm:px-6 md:px-8 pb-5 md:pb-6">
+                                                    <div className="rounded-xl md:rounded-2xl bg-zinc-950 border border-white/5 px-4 sm:px-5 md:px-6 py-4 md:py-5 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+                                                        <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/90 max-w-3xl">
+                                                            {faq.answer}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
