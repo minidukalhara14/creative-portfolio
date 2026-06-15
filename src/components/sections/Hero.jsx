@@ -21,8 +21,7 @@ export default function Hero() {
           className="
             w-full
             lg:h-[calc(100vh-80px)]
-            lg:mt-[70px]
-           
+            
             pb-[50px] 
             md:pb-5
             px-3
