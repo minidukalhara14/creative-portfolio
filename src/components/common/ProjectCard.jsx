@@ -1,10 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { urlFor } from '../../sanityClient';
 
 export default function ProjectCard({ project }) {
   
-  const { title, projectType, images, projectUrl, _id } = project;
+  const { title, projectType, images, _id } = project;
+  const imageUrl = images?.[0] ? urlFor(images[0]).url() : null;
 
   console.log(project);
   return (
@@ -15,16 +15,16 @@ export default function ProjectCard({ project }) {
     >
       
      
-      <div className="w-full h-[260px] md:h-[350px]  overflow-hidden rounded-lg">
-        {images && images.length > 0 && urlFor(images[0]).url() ? (
+      <div className="w-full aspect-square overflow-hidden rounded-lg bg-gray-300">
+        {imageUrl ? (
           <img 
-            src={urlFor(images[0]).url()} 
+            src={imageUrl} 
             alt={title}
             
-            className="w-full h-[260px] md:h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
-          <div className="w-full h-[260px] md:h-[350px] bg-gray-300 flex items-center justify-center text-zinc-500">
+          <div className="w-full h-full flex items-center justify-center text-zinc-500">
             No Image Provided
           </div>
         )}
