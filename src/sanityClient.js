@@ -1,6 +1,6 @@
 // src/sanityClient.js
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import {createImageUrlBuilder} from "@sanity/image-url";
 
 export const client = createClient({
   projectId: "6xwfm015", // ඔයාගේ සැනිටි Project ID එක
@@ -9,5 +9,5 @@ export const client = createClient({
   apiVersion: "2026-05-28", // අද දවස
 });
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 export const urlFor = (source) => builder.image(source);
