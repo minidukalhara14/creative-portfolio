@@ -107,7 +107,7 @@ export default function HeroImage() {
           className="relative flex h-[260px] w-[200px] md:h-[330px] md:w-[250px] items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-[#1e1e2f] to-[#111119] shadow-xl"
         >
           
-          {heroData?.heroImage ? (
+          {heroData?.heroImage && urlFor(heroData.heroImage).url() ? (
             <img
               src={urlFor(heroData.heroImage).url()}
               alt="Hero Element"

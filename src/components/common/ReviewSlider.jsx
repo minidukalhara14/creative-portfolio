@@ -73,7 +73,7 @@ export default function ReviewSlider() {
 
        
         <div className="mt-6 md:mt-8 flex flex-col items-center gap-3">
-          {current.clientImage && (
+          {current.clientImage && urlFor(current.clientImage).url() && (
             <img
               src={urlFor(current.clientImage).url()}
               alt={current.clientName}

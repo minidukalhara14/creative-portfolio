@@ -125,7 +125,7 @@ export default function ProjectDetailPage() {
                     {/* Image Showcase Gallery */}
                     <div className="w-full max-w-[800px] flex flex-col gap-8 mt-12">
                         {images && images.length > 0 ? (
-                            images.map((img, index) => (
+                            images.filter(img => urlFor(img).url()).map((img, index) => (
                                 <div key={index} className="w-full h-auto bg-zinc-900/[0.03] rounded-2xl p-2 md:p-4 border border-zinc-900/[0.05]">
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl">
                                         <img 

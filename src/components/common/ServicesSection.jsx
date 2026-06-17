@@ -82,7 +82,7 @@ export default function ServicesSection() {
                     </p>
 
                    
-                    {service.serviceIcon && (
+                    {service.serviceIcon && urlFor(service.serviceIcon).url() && (
                       <div className="block md:hidden w-full h-50 mt-4 overflow-hidden rounded-xl border border-white/10 shadow-lg bg-zinc-900">
                         <img
                           src={urlFor(service.serviceIcon).url()}
@@ -99,7 +99,7 @@ export default function ServicesSection() {
 
           <div className="hidden md:block sticky top-24 w-full h-112.5 overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-zinc-900 mt-24">
             <AnimatePresence mode="wait">
-              {services[activeIndex]?.serviceIcon ? (
+              {services[activeIndex]?.serviceIcon && urlFor(services[activeIndex].serviceIcon).url() ? (
                 <motion.img
                   key={activeIndex}
                   src={urlFor(services[activeIndex].serviceIcon).url()}

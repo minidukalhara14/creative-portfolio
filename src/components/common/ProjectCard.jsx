@@ -16,7 +16,7 @@ export default function ProjectCard({ project }) {
       
      
       <div className="w-full h-[260px] md:h-[350px]  overflow-hidden rounded-lg">
-        {images && images.length > 0 ? (
+        {images && images.length > 0 && urlFor(images[0]).url() ? (
           <img 
             src={urlFor(images[0]).url()} 
             alt={title}

@@ -110,7 +110,7 @@ function TableRow({ row }) {
       className="relative flex flex-col md:grid md:grid-cols-3 items-start md:items-center py-6 md:py-8 border-b border-white/10 cursor-pointer group transition-colors duration-300 hover:bg-white/[0.02] [perspective:1200px] [transform-style:preserve-3d] gap-4 md:gap-0 block"
     >
       {/* 1. Mobile Only Image: මොබයිල් එකේදී විතරක් ලැයිස්තුවේ මුලටම (උඩටම) පේන්න හදපු කොටස */}
-      {row.images && row.images[0] && (
+      {row.images && row.images[0] && urlFor(row.images[0]).url() && (
         <div className="block md:hidden w-full h-[220px] overflow-hidden rounded-xl border border-white/10 select-none">
           <img
             src={urlFor(row.images[0]).url()} 
@@ -159,7 +159,7 @@ function TableRow({ row }) {
         }}
         className="hidden md:block pointer-events-none absolute right-16 top-1/2 z-50 w-[150px] h-[180px] overflow-hidden rounded-xl shadow-2xl border border-white/20 origin-center"
       >
-        {row.images && row.images[0] && (
+        {row.images && row.images[0] && urlFor(row.images[0]).url() && (
           <img
             src={urlFor(row.images[0]).url()} 
             alt={row.title}

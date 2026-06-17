@@ -10,4 +10,15 @@ export const client = createClient({
 });
 
 const builder = createImageUrlBuilder(client);
-export const urlFor = (source) => builder.image(source);
+
+// Safe URL builder that handles incomplete/missing image assets
+export const urlFor = (source) => {
+  // Check if source exists and has required asset field
+  if (!source || !source.asset) {
+    console.warn("Invalid image source:", source);
+    return {
+      url: () => null, // Return null URL for invalid images
+    };
+  }
+  return builder.image(source);
+};
