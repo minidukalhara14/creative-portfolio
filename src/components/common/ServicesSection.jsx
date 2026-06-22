@@ -13,7 +13,8 @@ export default function ServicesSection() {
     client
       .fetch(query)
       .then((data) => {
-        services(data);
+        // මෙතන තිබුණු වැරැද්ද නිවැරදි කළා: services(data) වෙනුවට setServices(data) යෙදුවා
+        setServices(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -57,12 +58,10 @@ export default function ServicesSection() {
                 >
                   
                   <div className="flex items-baseline gap-3 sm:gap-4 md:gap-6 select-none">
-                    {/* Desktop වලදී active නැතිනම් opacity අඩු කර අළු පැහැය ලබා දී ඇත */}
                     <span className={`text-xs md:text-sm font-medium transition-all duration-300 text-primary ${isOpen ? "md:opacity-100" : "md:opacity-20"}`}>
                       {formattedId}
                     </span>
                   
-                    {/* Desktop වලදී unhovered අවස්ථාවේදී opacity-30 (අළු පැහැය) වන අතර group-hover හෝ isOpen විට opacity-100 (තද වර්ණය) වේ */}
                     <h3 className={`text-2xl md:text-4xl font-medium tracking-[-0.02em] uppercase transition-all duration-300 text-primary translate-x-2 md:translate-x-0 ${isOpen ? "md:translate-x-2 md:opacity-100" : "md:opacity-30 md:group-hover:opacity-100 md:group-hover:translate-x-2"}`}>
                       {service.serviceTitle}
                     </h3>
