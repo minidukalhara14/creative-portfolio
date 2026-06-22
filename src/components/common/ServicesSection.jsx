@@ -47,7 +47,7 @@ export default function ServicesSection() {
             {services.map((service, index) => {
               const isOpen = activeIndex === index;
               
-              // Mobile සහ Large (Desktop) දෙකටම එකම පොදු 3-digit අංකනය භාවිතා කලා
+              
               const formattedId = String(index + 1).padStart(3, "0");
               
               return (
@@ -60,23 +60,23 @@ export default function ServicesSection() {
                   
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 sm:gap-3 md:gap-6 select-none">
                     
-                    {/* Mobile ID: ජංගම තිරවලදී පමණක් පෙනෙන, ඉහළින්ම පිහිටන අංකය */}
+                    
                     <span className="text-[10px] font-medium tracking-wider text-primary/40 block md:hidden mb-1 pl-0">
                       {formattedId}
                     </span>
 
-                    {/* Desktop ID: විශාල තිරවලදී (Large screens) පමණක් මාතෘකාවට වම් පසින් පෙනෙන අංකය */}
+                    
                     <span className={`text-xs md:text-sm font-medium transition-all duration-300 text-primary hidden md:block ${isOpen ? "md:opacity-100" : "md:opacity-20"}`}>
                       {formattedId}
                     </span>
                   
-                    {/* Title: Mobile වලදී වම් පස සරල රේඛාවේම ආරම්භ වේ */}
+                    
                     <h3 className={`text-2xl md:text-4xl font-medium tracking-[-0.02em] uppercase transition-all duration-300 text-primary md:translate-x-0 ${isOpen ? "md:translate-x-2 md:opacity-100" : "md:opacity-30 md:group-hover:opacity-100 md:group-hover:translate-x-2"}`}>
                       {service.serviceTitle}
                     </h3>
                   </div>
 
-                  {/* Content Box: Mobile වලදී pl-0 වන අතර Large වලදී පැරණි පරතරය (pl-11) ආරක්ෂා වේ */}
+                 
                   <motion.div
                     initial={false}
                     animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
@@ -88,11 +88,11 @@ export default function ServicesSection() {
                     </p>
 
                     {service.serviceIcon && urlFor(service.serviceIcon).url() && (
-                      <div className="block md:hidden w-full h-50 mt-4 overflow-hidden rounded-2xl shadow-lg bg-zinc-900">
+                      <div className="block md:hidden w-full h-50 mt-4 overflow-hidden rounded-2xls">
                         <img
                           src={urlFor(service.serviceIcon).url()}
                           alt={service.serviceTitle}
-                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                          className="w-full h-full object-cover transition-transform duration-700 rounded-2xl ease-out"
                         />
                       </div>
                     )}
