@@ -32,9 +32,9 @@ export default function Footer() {
             © {currentYear} Vertex Digital. All Rights Reserved.
           </div>
 
-          {/* Navigation - Mobile: Column, Desktop: Row */}
+          {/* Navigation - Mobile: Column, Desktop: Row (Gap increased here) */}
           <div className="order-1 md:order-2">
-            <nav className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 select-none">
+            <nav className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 select-none">
               <Link to="/" reloadDocument className="label text-[10px] text-secondary hover:text-secondary/60 transition-colors duration-300">Home</Link>
               <Link to="/about" reloadDocument className="label text-[10px] text-secondary hover:text-secondary/60 transition-colors duration-300">About</Link>
               <Link to="/projects" reloadDocument className="label text-[10px] text-secondary hover:text-secondary/60 transition-colors duration-300">Project</Link>
