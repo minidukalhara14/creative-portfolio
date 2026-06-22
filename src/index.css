@@ -1,13 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 
 
 @theme {
+  --font-sans: "Inter Tight", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter Tight", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
   --color-primary: #0B0C0F;
   --color-secondary: #FFFFFF;
  
 }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-secondary text-primary leading-7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-semibold tracking-[-0.03em] leading-[1.04] text-balance;
+  }
+
+  p,
+  li,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label {
+    @apply font-sans leading-6;
+  }
+
+  small,
+  .eyebrow,
+  .kicker,
+  .label {
+    @apply font-mono uppercase tracking-[0.22em] font-medium;
+  }
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Tight', 'Inter', sans-serif;
 }

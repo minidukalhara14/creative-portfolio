@@ -33,7 +33,7 @@ export default function ProjectPage() {
 
         {/* Left Side Tagline & CTA */}
         <div className="w-full md:w-[400px] h-auto md:h-[200px] flex items-center flex-col relative md:absolute md:bottom-0 md:left-0 px-6 mt-6 md:mt-0">
-            <span className="text-lg md:text-xl font-medium tracking-wider text-center md:text-left text-white md:text-secondary">
+            <span className="text-lg md:text-xl font-medium tracking-[-0.01em] leading-[1.5] text-center md:text-left text-white md:text-secondary">
                 As an engineer, I help companies design machines
                 and products that perform in the real world.
             </span>
@@ -49,7 +49,7 @@ export default function ProjectPage() {
         <div className="w-[calc(100%-30px)] mb-[20px] md:w-[600px] h-auto md:h-[calc(100vh-80px)] relative md:fixed md:top-[80px] md:right-10 bg-secondary border-t md:border-t-0 md:border-r border-zinc-800 z-30 md:z-40 flex flex-col justify-between p-6 rounded-2xl mt-12 md:mt-0">
           
           <div className="mb-4 md:mb-6">
-            <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-primary">All Projects</h2>
+            <h2 className="label text-xs text-primary">All Projects</h2>
           </div>
           
           <div className="mb-4">

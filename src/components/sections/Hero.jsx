@@ -40,15 +40,15 @@ export default function Hero() {
           <div
             className="
               mt-0
+              font-display
               font-semibold
               text-[48px]
               xs:text-[60px]
               sm:text-7xl
               md:text-[190px]
-              leading-[0.85]
-              md:leading-[0.8]
-              tracking-wide
-              md:tracking-wider
+              leading-[0.86]
+              md:leading-[0.82]
+              tracking-[-0.04em]
               text-white
               flex
               justify-center
@@ -74,6 +74,7 @@ export default function Hero() {
          
           <div
             className="
+              font-display
               font-semibold
               text-[48px]
               xs:text-[60px]
@@ -82,10 +83,9 @@ export default function Hero() {
               mt-2
               sm:mt-3
               md:mt-[50px]
-              leading-[0.85]
-              md:leading-[0.8]
-              tracking-wide
-              md:tracking-wider
+              leading-[0.86]
+              md:leading-[0.82]
+              tracking-[-0.04em]
               text-white
               flex
               justify-center

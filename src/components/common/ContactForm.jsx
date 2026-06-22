@@ -42,17 +42,21 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-[95%] max-w-[500px] md:w-[500px] h-auto md:h-[600px] text-primary p-6 flex flex-col gap-6 items-center relative bg-secondary rounded-2xl shadow-md text-card-foreground">
+    <div className="w-[95%] max-w-[500px] md:w-[500px] h-auto md:h-[600px] text-primary px-5 py-6 sm:p-6 flex flex-col gap-5 sm:gap-6 items-center relative bg-secondary rounded-2xl shadow-md text-card-foreground">
       
-      <div className="text-center w-full mt-2 md:mt-5">
-        <p className="text-xl text-muted-foreground">Have a project in mind?</p>
-        <p className="text-sm text-muted-foreground mt-2">Send me the details. I'll get back to you within 24 hours.</p>
+      <div className="text-center w-full mt-1 sm:mt-2 md:mt-5 px-1 sm:px-0">
+        <p className="text-xl font-medium tracking-[-0.02em] leading-[1.35] text-muted-foreground max-w-[14ch] sm:max-w-none mx-auto">
+          Have a project in mind?
+        </p>
+        <p className="text-sm text-muted-foreground mt-2 leading-6 max-w-[26ch] sm:max-w-none mx-auto">
+          Send me the details. I'll get back to you within 24 hours.
+        </p>
       </div>
 
-      <form ref={formRef} className="w-full mt-3 flex justify-center items-center flex-col gap-4" onSubmit={handleSubmit}>
-        <div className="flex flex-col sm:flex-row gap-4 w-full">
+      <form ref={formRef} className="w-full mt-2 sm:mt-3 flex justify-center items-center flex-col gap-4 sm:gap-5" onSubmit={handleSubmit}>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
           <div className="flex flex-col gap-1.5 flex-1">
-            <label htmlFor="firstName" className="text-sm font-medium">First Name</label>
+            <label htmlFor="firstName" className="label text-sm">First Name</label>
             <input 
               type="text" 
               id="firstName" 
@@ -65,7 +69,7 @@ export default function ContactForm() {
             />
           </div>
           <div className="flex flex-col gap-1.5 flex-1">
-            <label htmlFor="lastName" className="text-sm font-medium">Last Name</label>
+            <label htmlFor="lastName" className="label text-sm">Last Name</label>
             <input 
               type="text" 
               id="lastName" 
@@ -79,8 +83,8 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="mt-1 md:mt-3 flex flex-col gap-1.5 w-full">
-          <label htmlFor="email" className="text-sm font-medium">Email Address</label>
+        <div className="mt-0 sm:mt-1 md:mt-3 flex flex-col gap-1.5 w-full">
+          <label htmlFor="email" className="label text-sm">Email Address</label>
           <input 
             type="email" 
             id="email" 
@@ -93,8 +97,8 @@ export default function ContactForm() {
           />
         </div>
 
-        <div className="mt-1 md:mt-3 flex flex-col gap-1.5 w-full">
-          <label htmlFor="message" className="text-sm font-medium">Message</label>
+        <div className="mt-0 sm:mt-1 md:mt-3 flex flex-col gap-1.5 w-full">
+          <label htmlFor="message" className="label text-sm">Message</label>
           <textarea 
             id="message" 
             name="message" // 👈 මේක අනිවාර්යයි
@@ -107,7 +111,7 @@ export default function ContactForm() {
           />
         </div>
 
-        <button type="submit" disabled={isSending} className="w-full md:w-[400px] h-[40px] mt-6 md:mt-10 bg-primary text-secondary font-medium rounded-full text-sm disabled:opacity-70 transition-opacity">
+        <button type="submit" disabled={isSending} className="w-full md:w-[400px] h-[44px] mt-5 sm:mt-6 md:mt-10 bg-primary text-secondary font-medium tracking-[0.02em] rounded-full text-sm disabled:opacity-70 transition-opacity px-4">
           {isSending ? "Sending..." : "Send Message"}
         </button>
       </form>

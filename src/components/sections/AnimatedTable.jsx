@@ -30,7 +30,7 @@ export default function AnimatedTable() {
   return (
     <div className="w-full min-h-screen text-white flex flex-col justify-center items-center">
       <div className="w-full max-w-6xl flex justify-center items-center flex-col mx-auto mb-8 md:mb-16 px-6 py-12 text-center">
-        <h1 className="text-2xl md:text-xl mb-10 md:mb-15 font-medium tracking-tight text-white leading-tight max-w-4xl select-none">
+        <h1 className="text-2xl md:text-xl mb-10 md:mb-15 font-medium tracking-[-0.02em] text-white leading-[1.45] max-w-4xl select-none">
           I work with manufacturers, startups, and product companies worldwide
           <br className="hidden md:inline" />
           to bring complex engineering ideas to life through precision
@@ -122,7 +122,7 @@ function TableRow({ row }) {
 
       {/* 2. Project Title: Desktop එකේ 1st column එක */}
       <div className="pointer-events-none text-left w-full">
-        <h2 className="text-3xl md:text-5xl font-medium text-secondary tracking-tight group-hover:translate-x-0 md:group-hover:translate-x-3 transition-transform duration-300 ease-out">
+        <h2 className="text-3xl md:text-5xl font-medium text-secondary tracking-[-0.02em] leading-[1.05] group-hover:translate-x-0 md:group-hover:translate-x-3 transition-transform duration-300 ease-out">
           {row.title}
         </h2>
       </div>

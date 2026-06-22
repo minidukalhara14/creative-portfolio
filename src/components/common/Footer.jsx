@@ -11,7 +11,7 @@ export default function Footer() {
         
        
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-24 select-none">
-          <h2 className="text-xl  font-medium tracking-wide leading-tight mb-10 text-secondary">
+          <h2 className="text-xl font-medium tracking-[-0.02em] leading-[1.35] mb-10 text-secondary">
             Have a machine to build or a product to bring to life?<br />
             Let's talk about your project.
             </h2>
@@ -19,9 +19,9 @@ export default function Footer() {
           
           <Link
             to="/contact" reloadDocument 
-            className="p-4 border text-[10px] border-solid border-white/20 rounded-full hover:border-white/50 transition-colors duration-300 group"
+            className="px-4 py-2.5 border text-[10px] border-solid border-white/20 rounded-full hover:border-white/50 transition-colors duration-300 group"
           >
-            <AnimatedButton text="Schedule a Call" className="text-secondary uppercase tracking-wider text-[10px]" />
+            <AnimatedButton text="Schedule a Call" className="text-secondary uppercase tracking-[-0.01em] text-[10px]" />
           </Link>
         </div>
 
@@ -29,23 +29,23 @@ export default function Footer() {
 <div className="w-full border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-6 text-center md:text-left">
   
  
-  <div className="text-sm font-light text-secondary/50 select-none md:justify-self-start">
+  <div className="text-sm font-normal leading-6 text-secondary/50 select-none md:justify-self-start">
   © {currentYear} Vertex Digital. All Rights Reserved.
   </div>
 
  
   <div className="md:justify-self-center">
     <nav className="flex items-center justify-center gap-6 select-none">
-      <Link to="/" reloadDocument className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
+      <Link to="/" reloadDocument className="label text-[10px] text-secondary hover:text-secondary/60 transition-colors duration-300 px-1 py-1">
         Home
       </Link>
-      <Link to="/about" reloadDocument className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
+      <Link to="/about" reloadDocument className="label text-[10px] text-secondary hover:text-secondary/60 transition-colors duration-300 px-1 py-1">
         About
       </Link>
-      <Link to="/projects" reloadDocument className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
+      <Link to="/projects" reloadDocument className="label text-[10px] text-secondary hover:text-secondary/60 transition-colors duration-300 px-1 py-1">
         Project
       </Link>
-      <Link to="/contact" reloadDocument  className="text-[10px] uppercase tracking-wider text-secondary hover:text-secondary/60 transition-colors duration-300">
+      <Link to="/contact" reloadDocument  className="label text-[10px] text-secondary hover:text-secondary/60 transition-colors duration-300 px-1 py-1">
         Call Me
       </Link>
     </nav>

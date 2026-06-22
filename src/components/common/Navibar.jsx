@@ -21,26 +21,26 @@ export default function Navibar() {
         
        
         <div className="w-[91.28px] h-[24px]">
-            <Link to="/" reloadDocument className="font-sans text-[16px] leading-[24px] tracking-normal uppercase align-middle text-white">
+            <Link to="/" reloadDocument className="font-medium text-[16px] leading-[24px] tracking-[-0.01em] uppercase align-middle text-white">
               Portfolio
             </Link>
         </div>
 
       
         <nav className="hidden md:flex gap-[32px]">
-            <div className="p-4 h-[10px] cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center">
+            <div className="px-4 py-2.5 cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center">
                 <Link to="/about">
-                  <AnimatedButton text="ABOUT" className="font-sans text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle" />
+                  <AnimatedButton text="ABOUT" className="text-[12px] text-secondary leading-[24px] tracking-[-0.01em] uppercase align-middle" />
                 </Link>
             </div>
-            <div className="p-4 h-[10px] cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center">
+            <div className="px-4 py-2.5 cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center">
                 <Link to="/projects">
-                  <AnimatedButton text="WORK" className="font-sans text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle" />
+                  <AnimatedButton text="WORK" className="text-[12px] text-secondary leading-[24px] tracking-[-0.01em] uppercase align-middle" />
                 </Link>
             </div>
-            <div className="p-4 h-[10px] cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center">
+            <div className="px-4 py-2.5 cursor-pointer border border-solid border-slate-700 rounded-full rotate-0 opacity-100 bg-transparent flex justify-center items-center">
                 <Link to="/contact" reloadDocument>
-                  <AnimatedButton text="CONTACT" className="font-sans text-[12px] text-secondary leading-[24px] tracking-normal uppercase align-middle" />
+                  <AnimatedButton text="CONTACT" className="text-[12px] text-secondary leading-[24px] tracking-[-0.01em] uppercase align-middle" />
                 </Link>
             </div>
         </nav>
@@ -75,7 +75,7 @@ export default function Navibar() {
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-between px-5 py-5 text-black hover:bg-black/[0.03] transition-colors duration-200"
                   >
-                    <span className="text-base font-semibold uppercase tracking-[0.18em] text-black">
+                    <span className="label text-base text-black">
                       {item.label}
                     </span>
                     <ChevronRight className="h-4 w-4 text-black/60" strokeWidth={2.25} />

@@ -58,15 +58,15 @@ export default function ServicesSection() {
                   key={service._id}
                   onMouseEnter={() => handleServiceInteraction(index, "hover")}
                   onClick={() => handleServiceInteraction(index, "click")}
-                  className="py-6 md:py-8 border-b border-white/10 cursor-pointer group flex flex-col transition-all duration-300"
+                  className="py-5 sm:py-6 md:py-8 border-b border-white/10 cursor-pointer group flex flex-col transition-all duration-300 hover:bg-black/[0.015]"
                 >
                   
-                  <div className="flex items-baseline gap-4 md:gap-6 select-none">
+                  <div className="flex items-baseline gap-3 sm:gap-4 md:gap-6 select-none">
                     <span className={`text-xs md:text-sm font-medium transition-colors duration-300 ${isOpen ? "text-primary" : "text-primary/10"}`}>
                       {formattedId}
                     </span>
                   
-                    <h3 className={`text-2xl md:text-4xl font-medium tracking-tight uppercase transition-all duration-300 ${isOpen ? "text-primary translate-x-2" : "text-primary/25 group-hover:text-primary"}`}>
+                    <h3 className={`text-2xl md:text-4xl font-medium tracking-[-0.02em] uppercase transition-all duration-300 ${isOpen ? "text-primary translate-x-2" : "text-primary/25 group-hover:text-primary"}`}>
                       {service.serviceTitle}
                     </h3>
                   </div>
@@ -75,19 +75,19 @@ export default function ServicesSection() {
                     initial={false}
                     animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
                     transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                    className="overflow-hidden pl-8 md:pl-11"
+                    className="overflow-hidden pl-7 sm:pl-8 md:pl-11"
                   >
-                    <p className="text-primary text-base md:text-lg mt-4 max-w-md leading-relaxed">
+                    <p className="text-primary text-base md:text-lg mt-3 sm:mt-4 max-w-md leading-7">
                       {service.serviceDescription}
                     </p>
 
                    
                     {service.serviceIcon && urlFor(service.serviceIcon).url() && (
-                      <div className="block md:hidden w-full h-50 mt-4 overflow-hidden rounded-xl border border-white/10 shadow-lg bg-zinc-900">
+                      <div className="block md:hidden w-full h-50 mt-4 overflow-hidden rounded-2xl border border-white/10 shadow-lg bg-zinc-900">
                         <img
                           src={urlFor(service.serviceIcon).url()}
                           alt={service.serviceTitle}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                         />
                       </div>
                     )}
@@ -97,7 +97,7 @@ export default function ServicesSection() {
             })}
           </div>
 
-          <div className="hidden md:block sticky top-24 w-full h-112.5 overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-zinc-900 mt-24">
+          <div className="hidden md:block sticky top-24 w-full h-112.5 overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-zinc-900 mt-24 group">
             <AnimatePresence mode="wait">
               {services[activeIndex]?.serviceIcon && urlFor(services[activeIndex].serviceIcon).url() ? (
                 <motion.img
@@ -108,7 +108,7 @@ export default function ServicesSection() {
                   animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                   exit={{ opacity: 0, scale: 0.95, filter: "blur(8px)" }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-white/20 text-sm">

@@ -84,7 +84,7 @@ export default function AboutMeCard() {
       ease: [0.76, 0, 0.24, 1],
       delay: 0.2,
     }}
-    className="relative z-10 block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.10em] md:tracking-[0.15em] text-primary leading-none select-none text-center"
+    className="relative z-10 block font-display text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[-0.03em] text-primary leading-[0.9] select-none text-center"
   >
     My Story
   </motion.span>
@@ -96,29 +96,29 @@ export default function AboutMeCard() {
          
         
           
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-24">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
+          <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-10 sm:py-12 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-20 items-center">
 
     {/* Image Section */}
-    <div className="w-full max-w-[380px] md:max-w-[420px] aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-800 shadow-xl mx-auto">
+    <div className="group w-full max-w-[380px] md:max-w-[420px] aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-zinc-800 shadow-xl mx-auto">
       <img
         src={IsharaProfile}
         alt="My Story Graphic"
-        className="w-full h-full object-cover grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-700 ease-in-out"
+        className="w-full h-full object-cover object-center md:object-[50%_20%] grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
       />
     </div>
 
     {/* Information Section */}
     <div className="flex flex-col justify-center text-left">
-      <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 mb-4 block">
+      <span className="label text-xs text-zinc-500 mb-4 block">
         Who I Am
       </span>
 
-      <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-wide text-black mb-6 leading-tight">
+      <h3 className="text-2xl md:text-3xl font-semibold uppercase tracking-[-0.02em] text-black mb-6 leading-[1.15]">
         ENGINEERED FOR PRECISION, BUILT FOR RESULTS
       </h3>
 
-      <div className="space-y-4 text-zinc-400 font-sans text-sm md:text-lg leading-relaxed font-light">
+      <div className="space-y-4 text-zinc-400 text-sm md:text-lg leading-7 font-normal">
         <p>
           I'm Ishara Deshapriya — a mechanical engineer and full-time freelance
           designer based in Sri Lanka, specializing in industrial machine design
@@ -131,30 +131,30 @@ export default function AboutMeCard() {
       </div>
 
       {/* Stats */}
-      <div className="mt-8 pt-6 border-t border-zinc-800/50 flex gap-8">
+      <div className="mt-8 pt-6 border-t border-zinc-800/50 grid grid-cols-3 gap-4 sm:gap-6">
         <div>
-          <h5 className="text-xl md:text-2xl font-bold text-black font-mono">
+          <h5 className="text-xl md:text-2xl font-semibold text-black">
             10+
           </h5>
-          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">
+          <p className="label text-[10px] md:text-xs text-zinc-500 mt-1">
             Years Experience
           </p>
         </div>
 
         <div>
-          <h5 className="text-xl md:text-2xl font-bold text-black font-mono">
+          <h5 className="text-xl md:text-2xl font-semibold text-black">
             100+
           </h5>
-          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">
+          <p className="label text-[10px] md:text-xs text-zinc-500 mt-1">
             Projects Delivered
           </p>
         </div>
 
         <div>
-          <h5 className="text-xl md:text-2xl font-bold text-black font-mono inline-flex items-center gap-1">
+          <h5 className="text-xl md:text-2xl font-semibold text-black inline-flex items-center gap-1">
             4.9 <IoMdStar />
           </h5>
-          <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider mt-1">
+          <p className="label text-[10px] md:text-xs text-zinc-500 mt-1">
             Client Ratings
           </p>
         </div>
@@ -164,7 +164,7 @@ export default function AboutMeCard() {
   </div>
 </div>
          
-          <span className="text-sm lg:text-lg font-mono uppercase tracking-[0.3em] text-primary sticky top-0 bg-transparent pb-4 z-10 block text-center w-full px-4">
+          <span className="label text-sm lg:text-lg text-primary sticky top-0 bg-transparent pb-4 z-10 block text-center w-full px-4">
             My Journey & Experience
           </span>
             
@@ -175,34 +175,34 @@ export default function AboutMeCard() {
                 experiences.map((exp) => (
                   <div 
                     key={exp._id} 
-                    className="w-full min-h-[250px] bg-zinc-900/40 border border-zinc-800/50 p-6 md:p-8 rounded-2xl flex flex-col justify-between hover:border-zinc-700 transition-all duration-300 group snap-center shadow-xl"
+                    className="w-full min-h-[250px] bg-zinc-900/40 border border-zinc-800/50 p-6 md:p-8 rounded-2xl flex flex-col justify-between hover:border-zinc-700 hover:bg-zinc-900/55 hover:-translate-y-0.5 transition-all duration-300 group snap-center shadow-xl"
                   >
                     <div>
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-[10px] md:text-xs font-mono text-zinc-400 uppercase tracking-wider bg-zinc-800/60 px-3 py-1 rounded-full">
+                        <span className="label text-[10px] md:text-xs text-zinc-400 bg-zinc-800/60 px-3 py-1 rounded-full">
                           {exp.experienceTimeframe || "Present"}
                         </span>
                       </div>
 
-                      <h4 className="text-lg md:text-xl font-medium tracking-wide text-black uppercase group-hover:text-white transition-colors duration-300">
+                      <h4 className="text-lg md:text-xl font-medium tracking-[-0.015em] text-black uppercase group-hover:text-white transition-colors duration-300">
                         {exp.experienceTitle}
                       </h4>
                     </div>
 
-                    <p className="text-xs md:text-sm text-black font-sans font-light leading-relaxed mt-4 line-clamp-4 group-hover:text-zinc-300 transition-colors duration-300">
+                    <p className="text-xs md:text-sm text-black font-normal leading-6 mt-4 line-clamp-4 group-hover:text-zinc-300 transition-colors duration-300">
                       {exp.experienceDescription}
                     </p>
                   </div>
                 ))
               ) : (
-                <div className="w-full text-center py-10 text-zinc-500 font-mono text-sm">
+                <div className="w-full text-center py-10 text-zinc-500 label text-sm">
                   No Experience Records Found.
                 </div>
               )}
             </div>
 
             {experiences && experiences.length > 1 && (
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 animate-pulse mt-2 block text-center w-full">
+              <span className="label text-[10px] text-zinc-600 animate-pulse mt-2 block text-center w-full">
                 ↓ Scroll Down to View More Journey ↓
               </span>
             )}

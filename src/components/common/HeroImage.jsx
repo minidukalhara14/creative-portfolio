@@ -69,7 +69,7 @@ export default function HeroImage() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave} 
       
-      className="relative md:absolute md:top-0 flex w-full h-auto md:h-full justify-center items-center [perspective:1200px] mt-8 md:mt-0 z-10"
+      className="group relative md:absolute md:top-0 flex w-full h-auto md:h-full justify-center items-center [perspective:1200px] mt-8 md:mt-0 z-10"
     >
       <motion.div
         initial={{
@@ -104,7 +104,7 @@ export default function HeroImage() {
             transformStyle: "preserve-3d",
           }}
           
-          className="relative flex h-[260px] w-[200px] md:h-[330px] md:w-[250px] items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-[#1e1e2f] to-[#111119] shadow-xl"
+          className="relative flex h-[260px] w-[200px] md:h-[330px] md:w-[250px] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#1e1e2f] to-[#111119] shadow-xl transition-transform duration-500 ease-out group-hover:scale-[1.01]"
         >
           
           {heroData?.heroImage && urlFor(heroData.heroImage).url() ? (
@@ -112,7 +112,7 @@ export default function HeroImage() {
               src={urlFor(heroData.heroImage).url()}
               alt="Hero Element"
             
-              className="w-[200px] h-[260px] md:w-[250px] md:h-[330px] select-none object-cover drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)]"
+              className="w-[200px] h-[260px] md:w-[250px] md:h-[330px] select-none object-cover object-center md:object-[50%_35%] drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
           ) : (
             <div className="text-white/20 text-xs">No Image Uploaded</div>

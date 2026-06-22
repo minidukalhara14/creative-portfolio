@@ -26,10 +26,12 @@ export default function Intro() {
                     </div>
               </div>
 
-                <div className="w-full max-w-[700px] min-h-[150px] mt-[80px] md:mt-[120px] mx-auto px-4 ">
-                    <span className="text-[20px] sm:text-[25px] md:text-[25px] leading-[1.4] font-medium text-center block">
+                <div className="w-full max-w-[700px] min-h-[150px] mt-[80px] md:mt-[120px] mx-auto px-4">
+                    <span className="text-[20px] sm:text-[25px] md:text-[25px] leading-[1.55] font-medium tracking-[-0.01em] text-center block max-w-[18ch] sm:max-w-[24ch] md:max-w-none mx-auto">
                         With over a decade of experience in mechanical engineering,
+                        <br className="sm:hidden" />
                         <b>I design machines and products </b>that are built to perform —
+                        <br className="sm:hidden" />
                         and built to last.
                     </span>
                 </div>
@@ -42,7 +44,7 @@ export default function Intro() {
                 </div>
 
               
-                <div className="w-full flex justify-center items-center mt-[60px] md:mt-[100px] overflow-hidden px-4">
+                <div className="w-full flex justify-center items-center mt-[56px] md:mt-[100px] overflow-hidden px-4">
                     <motion.span
                         initial={{ y: "100%", opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }} 
@@ -52,7 +54,7 @@ export default function Intro() {
                             ease: [0.76, 0, 0.24, 1], 
                             delay: 0.2, 
                         }}
-                        className="block text-[40px] sm:text-[80px] md:text-[150px] font-semibold uppercase tracking-[0.10em] md:tracking-[0.15em] text-primary leading-none select-none text-center"
+                        className="block font-display text-[40px] sm:text-[80px] md:text-[150px] font-semibold uppercase tracking-[-0.03em] text-primary leading-[0.9] select-none text-center max-w-[10ch] sm:max-w-none mx-auto"
                     >
                         Since 2014
                     </motion.span>

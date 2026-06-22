@@ -52,8 +52,8 @@ export default function Services() {
                 </div>
 
                
-                <div className="w-full max-w-6xl mt-20 flex justify-center items-center flex-col mx-auto px-4 py-8 md:py-12 text-center">
-                    <h1 className="text-2xl md:text-xl font-medium tracking-wide text-primary leading-tight max-w-4xl select-none">
+                <div className="w-full max-w-6xl mt-16 sm:mt-20 flex justify-center items-center flex-col mx-auto px-4 py-8 md:py-12 text-center">
+                    <h1 className="text-2xl md:text-xl font-medium tracking-[-0.02em] text-primary leading-[1.45] max-w-[18ch] sm:max-w-4xl select-none mx-auto">
                         Have a machine to build or a product to bring to life?
                         <br className="hidden md:inline" />
                         I have the engineering expertise to take your project
@@ -68,8 +68,8 @@ export default function Services() {
                 </Link>
 
                
-                <div className="w-full flex flex-col justify-center items-center mt-[40px] md:mt-[70px] relative overflow-hidden px-4">
-                    <div className="w-full flex justify-center items-center mt-[40px] md:mt-[100px]">
+                <div className="w-full flex flex-col justify-center items-center mt-[28px] sm:mt-[40px] md:mt-[70px] relative overflow-hidden px-4">
+                    <div className="w-full flex justify-center items-center mt-[34px] sm:mt-[40px] md:mt-[100px]">
                         <motion.span
                             initial={{ y: "100%", opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }} 
@@ -79,7 +79,7 @@ export default function Services() {
                                 ease: [0.76, 0, 0.24, 1], 
                                 delay: 0.2, 
                             }}
-                            className="block text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center"
+                            className="block font-display text-4xl sm:text-6xl md:text-[150px] font-semibold uppercase tracking-[-0.03em] text-primary leading-[0.9] select-none text-center max-w-[11ch] sm:max-w-none mx-auto"
                         >
                             MY SERVICES
                         </motion.span> 
@@ -98,7 +98,7 @@ export default function Services() {
 
                    <div className="w-full flex flex-col justify-center items-center mt-[10px] overflow-hidden px-0 md:px-4"> 
                        
-                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4">
+                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4 mb-2 md:mb-0">
                             <motion.span
                             initial={{ y: "100%", opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }} 
@@ -108,19 +108,19 @@ export default function Services() {
                                 ease: [0.76, 0, 0.24, 1], 
                                 delay: 0.2, 
                             }}
-                            className="block text-2xl sm:text-3xl md:text-5xl font-semibold uppercase tracking-[0.1em] text-primary leading-none select-none text-center"
+                            className="block font-display text-2xl sm:text-3xl md:text-5xl font-semibold uppercase tracking-[-0.025em] text-primary leading-[0.95] select-none text-center max-w-[10ch] sm:max-w-none mx-auto"
                         >
                             Questions
                         </motion.span> 
                             
                         </div>
-                        <div className="w-full max-w-4xl mx-auto px-0 md:px-0 text-center">
+                        <div className="w-full max-w-4xl mx-auto px-0 md:px-0 text-center mt-1 sm:mt-2">
                             
-                            <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-primary/30 select-none">
+                            <span className="label text-xs md:text-sm text-primary/30 select-none">
                                     FAQ
                                 </span>
 
-                            <div className="mt-6 rounded-2xl bg-white shadow-2xl overflow-hidden border border-black/5">
+                            <div className="mt-5 sm:mt-6 rounded-2xl bg-white shadow-2xl overflow-hidden border border-black/5">
                                 {faqs.map((faq, index) => {
                                     const isOpen = activeFaqIndex === index;
                                     const number = String(index + 1).padStart(3, "0");
@@ -133,13 +133,13 @@ export default function Services() {
                                             <button
                                                 type="button"
                                                 onClick={() => toggleFaq(index)}
-                                                className="w-full flex items-center justify-between gap-4 px-4 sm:px-6 md:px-8 py-5 md:py-6 text-left cursor-pointer"
+                                                className="w-full flex items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left cursor-pointer"
                                             >
-                                                <div className="flex items-center gap-4 md:gap-6 min-w-0">
-                                                    <span className="text-xs md:text-sm font-medium tracking-[0.28em] text-black/35 select-none shrink-0">
+                                                <div className="flex items-center gap-3 sm:gap-4 md:gap-6 min-w-0">
+                                                    <span className="label text-xs md:text-sm text-black/35 select-none shrink-0">
                                                         {number}
                                                     </span>
-                                                    <span className="text-base sm:text-lg md:text-xl font-medium text-black leading-tight select-none">
+                                                    <span className="text-base sm:text-lg md:text-xl font-medium text-black leading-[1.35] select-none max-w-[22ch] sm:max-w-none">
                                                         {faq.question}
                                                     </span>
                                                 </div>
@@ -161,9 +161,9 @@ export default function Services() {
                                                 transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="px-4 sm:px-6 md:px-8 pb-5 md:pb-6">
+                                                <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
                                                     <div className="rounded-xl md:rounded-2xl bg-zinc-950 border border-white/5 px-4 sm:px-5 md:px-6 py-4 md:py-5 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
-                                                        <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/90 max-w-3xl">
+                                                        <p className="text-sm sm:text-base md:text-lg leading-7 text-white/90 max-w-3xl">
                                                             {faq.answer}
                                                         </p>
                                                     </div>

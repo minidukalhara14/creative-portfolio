@@ -9,7 +9,7 @@ export default function AnimatedText({text}) {
          
           <motion.div
            
-            className="text-white text-6xl sm:text-9xl md:text-[250px] font-bold uppercase tracking-wider flex shrink-0 pr-4"
+            className="text-white text-6xl sm:text-9xl md:text-[250px] font-semibold uppercase tracking-[-0.03em] leading-none flex shrink-0 pr-4"
             animate={{ x: [0, "-100%"] }} 
             transition={{
               ease: "linear",
@@ -22,7 +22,7 @@ export default function AnimatedText({text}) {
 
           
           <motion.div
-            className="text-white text-6xl sm:text-9xl md:text-[250px] font-bold uppercase tracking-wider flex shrink-0 pr-4"
+            className="text-white text-6xl sm:text-9xl md:text-[250px] font-semibold uppercase tracking-[-0.03em] leading-none flex shrink-0 pr-4"
             animate={{ x: [0, "-100%"] }}
             transition={{
               ease: "linear",
