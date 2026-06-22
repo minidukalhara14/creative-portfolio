@@ -13,7 +13,6 @@ export default function ServicesSection() {
     client
       .fetch(query)
       .then((data) => {
-        // මෙතන තිබුණු වැරැද්ද නිවැරදි කළා: services(data) වෙනුවට setServices(data) යෙදුවා
         setServices(data);
         setLoading(false);
       })
@@ -47,7 +46,9 @@ export default function ServicesSection() {
           <div className="flex flex-col border-t border-black mt-4 md:mt-10">
             {services.map((service, index) => {
               const isOpen = activeIndex === index;
-              const formattedId = String(index + 1).padStart(2, "0");
+              
+              // Mobile සහ Large (Desktop) දෙකටම එකම පොදු 3-digit අංකනය භාවිතා කලා
+              const formattedId = String(index + 1).padStart(3, "0");
               
               return (
                 <div
@@ -57,21 +58,30 @@ export default function ServicesSection() {
                   className="py-5 sm:py-6 md:py-8 border-b border-white/10 cursor-pointer group flex flex-col transition-all duration-300 hover:bg-black/[0.015]"
                 >
                   
-                  <div className="flex items-baseline gap-3 sm:gap-4 md:gap-6 select-none">
-                    <span className={`text-xs md:text-sm font-medium transition-all duration-300 text-primary ${isOpen ? "md:opacity-100" : "md:opacity-20"}`}>
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 sm:gap-3 md:gap-6 select-none">
+                    
+                    {/* Mobile ID: ජංගම තිරවලදී පමණක් පෙනෙන, ඉහළින්ම පිහිටන අංකය */}
+                    <span className="text-[10px] font-medium tracking-wider text-primary/40 block md:hidden mb-1 pl-0">
+                      {formattedId}
+                    </span>
+
+                    {/* Desktop ID: විශාල තිරවලදී (Large screens) පමණක් මාතෘකාවට වම් පසින් පෙනෙන අංකය */}
+                    <span className={`text-xs md:text-sm font-medium transition-all duration-300 text-primary hidden md:block ${isOpen ? "md:opacity-100" : "md:opacity-20"}`}>
                       {formattedId}
                     </span>
                   
-                    <h3 className={`text-2xl md:text-4xl font-medium tracking-[-0.02em] uppercase transition-all duration-300 text-primary translate-x-2 md:translate-x-0 ${isOpen ? "md:translate-x-2 md:opacity-100" : "md:opacity-30 md:group-hover:opacity-100 md:group-hover:translate-x-2"}`}>
+                    {/* Title: Mobile වලදී වම් පස සරල රේඛාවේම ආරම්භ වේ */}
+                    <h3 className={`text-2xl md:text-4xl font-medium tracking-[-0.02em] uppercase transition-all duration-300 text-primary md:translate-x-0 ${isOpen ? "md:translate-x-2 md:opacity-100" : "md:opacity-30 md:group-hover:opacity-100 md:group-hover:translate-x-2"}`}>
                       {service.serviceTitle}
                     </h3>
                   </div>
 
+                  {/* Content Box: Mobile වලදී pl-0 වන අතර Large වලදී පැරණි පරතරය (pl-11) ආරක්ෂා වේ */}
                   <motion.div
                     initial={false}
                     animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
                     transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                    className="overflow-hidden pl-7 sm:pl-8 md:pl-11 max-md:!h-auto max-md:!opacity-100"
+                    className="overflow-hidden pl-0 md:pl-11 max-md:!h-auto max-md:!opacity-100"
                   >
                     <p className="text-primary text-base md:text-lg mt-3 sm:mt-4 max-w-md leading-7">
                       {service.serviceDescription}
