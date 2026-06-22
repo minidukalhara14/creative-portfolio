@@ -108,7 +108,7 @@ export default function Services() {
                                 ease: [0.76, 0, 0.24, 1], 
                                 delay: 0.2, 
                             }}
-                            className="block font-display text-2xl sm:text-3xl md:text-5xl font-semibold uppercase tracking-[-0.025em] text-primary leading-[0.95] select-none text-center max-w-[10ch] sm:max-w-none mx-auto"
+                             className="block font-display text-[40px] sm:text-[80px] md:text-[150px] font-semibold uppercase tracking-[-0.03em] text-primary leading-[0.9] select-none text-center max-w-[10ch] sm:max-w-none mx-auto"
                         >
                             Questions
                         </motion.span> 
