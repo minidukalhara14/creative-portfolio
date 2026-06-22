@@ -102,7 +102,7 @@ export default function ServicesSection() {
             })}
           </div>
 
-          <div className="hidden md:block sticky top-24 w-full h-112.5 overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-zinc-900 mt-24 group">
+          <div className="hidden md:block sticky top-24 w-full h-112.5 overflow-hidden rounded-2xl shadow-2xl bg-zinc-900 mt-24 group">
             <AnimatePresence mode="wait">
               {services[activeIndex]?.serviceIcon && urlFor(services[activeIndex].serviceIcon).url() ? (
                 <motion.img
