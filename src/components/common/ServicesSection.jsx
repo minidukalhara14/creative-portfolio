@@ -88,7 +88,7 @@ export default function ServicesSection() {
                     </p>
 
                     {service.serviceIcon && urlFor(service.serviceIcon).url() && (
-                      <div className="block md:hidden w-full h-50 mt-4 overflow-hidden rounded-2xl border border-white/10 shadow-lg bg-zinc-900">
+                      <div className="block md:hidden w-full h-50 mt-4 overflow-hidden rounded-2xl shadow-lg bg-zinc-900">
                         <img
                           src={urlFor(service.serviceIcon).url()}
                           alt={service.serviceTitle}
