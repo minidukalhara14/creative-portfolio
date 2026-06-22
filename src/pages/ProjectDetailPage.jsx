@@ -126,12 +126,12 @@ export default function ProjectDetailPage() {
                     <div className="w-full max-w-[800px] flex flex-col gap-8 mt-12">
                         {images && images.length > 0 ? (
                             images.filter(img => urlFor(img).url()).map((img, index) => (
-                                <div key={index} className="w-full h-auto bg-zinc-900/[0.03] rounded-2xl p-2 md:p-4 border border-zinc-900/[0.05]">
+                                <div key={index} className="w-full aspect-square bg-zinc-900/[0.03] rounded-2xl p-2 md:p-4 border border-zinc-900/[0.05]">
                                     <div className="w-full h-full rounded-xl overflow-hidden shadow-xl">
                                         <img 
                                             src={urlFor(img).url()} 
                                             alt={`${title} Showcase - ${index + 1}`} 
-                                            className="w-full h-full object-cover select-none"
+                                            className="w-full h-full object-cover object-center select-none"
                                         />
                                     </div>
                                 </div>

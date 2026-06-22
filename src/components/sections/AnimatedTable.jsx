@@ -111,11 +111,11 @@ function TableRow({ row }) {
     >
       {/* 1. Mobile Only Image: මොබයිල් එකේදී විතරක් ලැයිස්තුවේ මුලටම (උඩටම) පේන්න හදපු කොටස */}
       {row.images && row.images[0] && urlFor(row.images[0]).url() && (
-        <div className="block md:hidden w-full h-[220px] overflow-hidden rounded-xl border border-white/10 select-none">
+        <div className="block md:hidden w-full aspect-square overflow-hidden rounded-xl border border-white/10 select-none">
           <img
             src={urlFor(row.images[0]).url()} 
             alt={row.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
       )}
@@ -157,13 +157,13 @@ function TableRow({ row }) {
           stiffness: 200,
           damping: 20,
         }}
-        className="hidden md:block pointer-events-none absolute right-16 top-1/2 z-50 w-[150px] h-[180px] overflow-hidden rounded-xl shadow-2xl border border-white/20 origin-center"
+        className="hidden md:block pointer-events-none absolute right-16 top-1/2 z-50 w-40 aspect-square overflow-hidden rounded-xl shadow-2xl border border-white/20 origin-center"
       >
         {row.images && row.images[0] && urlFor(row.images[0]).url() && (
           <img
             src={urlFor(row.images[0]).url()} 
             alt={row.title}
-            className="w-full h-full object-cover transform scale-105 select-none"
+            className="w-full h-full object-cover object-center transform scale-105 select-none"
           />
         )}
       </motion.div>
